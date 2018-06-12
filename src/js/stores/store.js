@@ -1,9 +1,15 @@
-import {observable} from 'mobx';
+import {observable, action} from 'mobx';
 
 class Store {
 
-  @observable
-  name = `Portfolio`
+  @observable showMenu = false;
+
+  @action toggleMenu = e => {
+    if (!this.showMenu) return this.showMenu = !this.showMenu;
+
+    document.querySelector('.menu-container').classList.add('close-menu');
+    setTimeout(() => this.showMenu = !this.showMenu, 800);
+  };
 
 }
 

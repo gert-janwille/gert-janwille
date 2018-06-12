@@ -1,6 +1,27 @@
 @import "reset.css";
 @import "constants";
 
+@import "components/navigation";
+@import "components/menu";
+
+html, body {
+  height: @fullHeight;
+  width: @fullWidth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background: @bgColor
+  font-size: 1em;
+  font-family: @fonts;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.content-container {
+  margin: calc(@navHeight + 3rem);
 }

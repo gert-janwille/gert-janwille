@@ -12,6 +12,8 @@ import {Provider} from 'mobx-react';
 import stores from './stores';
 
 const init = () => {
+  console.log(`%cCreated by Gert-Jan Wille`, `color: #D52C38; padding: 5px 0px; font-weight: bold; font-family: 'Poppins';`);
+  console.log(`%chttps://gertjanwille.com`, `color:#ccc; font-weight: italic; font-family: 'Poppins';`);
 
   render(
     <Provider {...stores}>

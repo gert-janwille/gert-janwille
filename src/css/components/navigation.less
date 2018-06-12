@@ -1,0 +1,81 @@
+@import "../constants";
+
+.navigation {
+  z-index: 1000;
+  top: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 5rem;
+  height: @navHeight;
+  width: @fullWidth;
+  background: @bgColor;
+}
+
+.logo {
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  margin: 2rem;
+  cursor: pointer;
+
+  background-color: @accentColor;
+  background-size: contain;
+
+  mask: url(/assets/svg/logo.svg) no-repeat;
+  mask-size: contain;
+  -webkit-mask: url(/assets/svg/logo.svg) no-repeat;
+  -webkit-mask-size: contain;
+}
+
+.nav-search {
+  width: 50%;
+  height: calc(@fullHeight - 20%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  input, label {
+    height: @fullHeight;
+  }
+
+  input {
+    outline: none;
+    border-radius: 5rem;
+    width: @fullWidth;
+    border: 2px solid @mainColor;
+
+    padding-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    font-family: Poppins;
+    color: @mainColor;
+
+    transform: translateX(110vw);
+    transition: all .3s ease;
+
+    &:focus {
+      transform: translateX(0);
+    }
+  }
+}
+
+.nav-search-label {
+  .icon();
+
+  z-index: 2;
+  margin-right: 2rem;
+
+  background: url(/assets/svg/search.svg) no-repeat center;
+  background-size: contain;
+}
+
+.menu-icon {
+  .icon();
+
+  background: url(/assets/svg/menu.svg) no-repeat center;
+  background-size: contain;
+}

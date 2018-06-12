@@ -1,0 +1,26 @@
+.slideIn(@duration, @delay) {
+  animation: slideIn @duration ease @delay 1 forwards;
+}
+
+.slideOut(@duration, @delay) {
+  animation: slideOut @duration ease @delay 1 forwards;
+}
+
+.fadeOut(@duration, @delay) {
+  animation: fadeOut @duration ease @delay 1 forwards;
+}
+
+@keyframes slideIn {
+    from {transform: translateX(150vh);}
+    to {transform: translateX(0);}
+}
+
+@keyframes slideOut {
+    from {transform: translateX(0);}
+    to {transform: translateX(150vh);}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

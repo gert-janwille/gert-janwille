@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Navigation" transform="translate(-1235.000000, -33.000000)" fill="#212121" fill-rule="nonzero">
+            <g id="menu" transform="translate(1235.000000, 33.000000)">
+                <rect id="Rectangle-path" x="5.61403509" y="5.61403509" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="0" y="0" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="5.61403509" y="11.2280702" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="0" y="5.61403509" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="0" y="11.2280702" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="11.2280702" y="0" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="5.61403509" y="0" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="11.2280702" y="5.61403509" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+                <rect id="Rectangle-path" x="11.2280702" y="11.2280702" width="3.74267544" height="3.74267544" rx="1.87133772"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
