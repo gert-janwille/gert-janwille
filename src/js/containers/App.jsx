@@ -5,7 +5,7 @@ import {Route} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 
-import {Home} from './';
+import {Projects, Detail} from './';
 import {Navigation, Menu} from '../components/'
 
 const App = ({toggleMenu, showMenu}) => (
@@ -18,7 +18,8 @@ const App = ({toggleMenu, showMenu}) => (
     {showMenu ? <Menu toggle={toggleMenu} /> : null}
 
     <section className='content-container'>
-      <Route exact path='/' component={Home} />
+      <Route exact path='/' component={Projects} />
+      <Route path='/projects/:title' component={Detail} />
     </section>
 
   </section>

@@ -1,8 +1,12 @@
 @import "reset.css";
 @import "constants";
+@import "mixins";
+@import "animations";
 
 @import "components/navigation";
 @import "components/menu";
+
+@import "pages/projects/main";
 
 html, body {
   height: @fullHeight;
@@ -23,5 +27,41 @@ body {
 }
 
 .content-container {
-  margin: calc(@navHeight + 3rem);
+  margin: calc(@navHeight + 1rem);
+}
+
+.heading {
+  font-size: 6rem;
+  font-weight: 800;
+  color: white;
+  line-height: 120%;
+}
+
+.caption {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: @mainColor
+}
+
+.button {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+
+  .btn-line {
+    margin-top: .3rem;
+    display: block;
+    width: @fullWidth;
+    height: .5rem;
+    background: @bgColor;
+    transition: all .3s ease;
+  }
+
+  &:hover .btn-line {
+    height: .4rem;
+    opacity: .5;
+    transform: scale(1.3);
+  }
 }

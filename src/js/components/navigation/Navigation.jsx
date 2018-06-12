@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Navigation = ({toggle}) => {
+const Navigation = ({toggle, color=''}) => {
   const handleShowMenu = (e) => toggle(e);
 
   return (
     <nav className='navigation'>
-      <Link to={`/`} className="logo" style={{backgroundColor: 'red'}}>
+      <Link to={`/`} className="logo" style={{backgroundColor: color}}>
         <h1><span className="hidden">Gert-Jan Wille</span></h1>
       </Link>
 

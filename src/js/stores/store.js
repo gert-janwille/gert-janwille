@@ -7,7 +7,7 @@ class Store {
   @action toggleMenu = e => {
     if (!this.showMenu) return this.showMenu = !this.showMenu;
 
-    document.querySelector('.menu-container').classList.add('close-menu');
+    setTimeout(() => document.querySelector('.menu-container').classList.add('close-menu'), 200);
     setTimeout(() => this.showMenu = !this.showMenu, 800);
   };
 

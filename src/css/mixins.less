@@ -1,0 +1,40 @@
+.split-lines (@i) when (@i > 0) {
+  &:nth-of-type(@{i}) {
+    .slideIn(.5s, calc(0.12s *  @i));
+  }
+  .split-lines(@i - 1);
+}
+
+
+.split-image (@i) when (@i > 0) {
+  &:nth-of-type(odd) {
+    animation: slideInRight .5s ease-in-out .8s 1 forwards;
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(-10vw);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &:nth-of-type(even) {
+    animation: slideInLeft .5s ease-in-out .78s 1 forwards;
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(10vw);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+  .split-image(@i - 1);
+}

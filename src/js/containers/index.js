@@ -1,7 +1,9 @@
 import App from './App';
-import Home from './Home';
+import Projects from './projects/Projects';
+import Detail from './projects/Detail';
 
 export {
   App,
-  Home
+  Projects,
+  Detail
 };

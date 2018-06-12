@@ -143,7 +143,6 @@ html {
   padding: 0 5rem;
   height: 5.6rem;
   width: 100%;
-  background: white;
 }
 .logo {
   left: 0;
@@ -152,7 +151,7 @@ html {
   height: 100%;
   margin: 2rem;
   cursor: pointer;
-  background-color: #FFC80A;
+  background-color: #2A2A2A;
   background-size: contain;
   mask: url(/assets/svg/logo.svg) no-repeat;
   mask-size: contain;
@@ -205,31 +204,8 @@ html {
   background: url(/assets/svg/menu.svg) no-repeat center;
   background-size: contain;
 }
-@keyframes slideIn {
-  from {
-    transform: translateX(150vh);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(150vh);
-  }
-}
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 .menu-container {
+  z-index: 999;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -240,7 +216,15 @@ html {
   background: white;
 }
 .close-menu {
-  animation: fadeOut 0.8s ease 0.5s 1 forwards;
+  animation: fadeOut 0.8s ease 0.3s 1 forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 .close-menu .links li {
   transform: translateX(0);
@@ -248,14 +232,46 @@ html {
 .close-menu .links li:nth-of-type(1) {
   animation: slideOut 0.5s ease 0.05s 1 forwards;
 }
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150vh);
+  }
+}
 .close-menu .links li:nth-of-type(2) {
   animation: slideOut 0.5s ease 0.12s 1 forwards;
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150vh);
+  }
 }
 .close-menu .links li:nth-of-type(3) {
   animation: slideOut 0.5s ease 0.14s 1 forwards;
 }
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150vh);
+  }
+}
 .close-menu .links li:nth-of-type(4) {
   animation: slideOut 0.5s ease 0.1s 1 forwards;
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150vh);
+  }
 }
 .links {
   width: 60%;
@@ -267,20 +283,52 @@ html {
 .links li:nth-of-type(1) {
   animation: slideIn 0.5s ease 0.05s 1 forwards;
 }
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 .links li:nth-of-type(2) {
   animation: slideIn 0.5s ease 0.12s 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 .links li:nth-of-type(3) {
   animation: slideIn 0.5s ease 0.14s 1 forwards;
 }
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 .links li:nth-of-type(4) {
   animation: slideIn 0.5s ease 0.1s 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 .links .link {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  transition: all .3s ease;
+  transition: all 0.2s ease-in;
   font-family: Poppins;
   font-weight: 800;
   text-decoration: none;
@@ -296,13 +344,443 @@ html {
   width: 10%;
   height: .5rem;
   margin: 0 2rem;
-  transition: all .3s ease;
+  transition: all 0.2s ease-in;
 }
 .links .active-link {
   color: #D5D5D5;
 }
 .links .active-link .bar {
   visibility: visible;
+}
+.intro {
+  z-index: 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#5EBDE9, #0294D0);
+  height: calc(100vh - (5.6rem + 1rem) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5rem;
+}
+.intro .image {
+  display: inline-block;
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.intro .image div {
+  opacity: 0;
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(odd) {
+  animation: slideInRight 0.5s ease-in-out 0.8s 1 forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro .image div:nth-of-type(even) {
+  animation: slideInLeft 0.5s ease-in-out 0.78s 1 forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10vw);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.main-info {
+  text-align: right;
+}
+.main-info .caption {
+  opacity: 0;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  animation: fadeUpIn 0.5s ease 0.3s 1 forwards;
+}
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(5vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.main-info .line-split {
+  display: block;
+  transform: translateX(150vh);
+}
+.main-info .line-split:nth-of-type(10) {
+  animation: slideIn 0.5s ease calc(0.12s * 10) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(9) {
+  animation: slideIn 0.5s ease calc(0.12s * 9) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(8) {
+  animation: slideIn 0.5s ease calc(0.12s * 8) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(7) {
+  animation: slideIn 0.5s ease calc(0.12s * 7) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(6) {
+  animation: slideIn 0.5s ease calc(0.12s * 6) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(5) {
+  animation: slideIn 0.5s ease calc(0.12s * 5) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(4) {
+  animation: slideIn 0.5s ease calc(0.12s * 4) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(3) {
+  animation: slideIn 0.5s ease calc(0.12s * 3) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(2) {
+  animation: slideIn 0.5s ease calc(0.12s * 2) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .line-split:nth-of-type(1) {
+  animation: slideIn 0.5s ease calc(0.12s * 1) 1 forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(150vh);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.main-info .button {
+  opacity: 0;
+  animation: fadeUpIn 0.3s ease 0.5s 1 forwards;
+}
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(5vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 html,
 body {
@@ -320,7 +798,38 @@ body {
   visibility: hidden;
 }
 .content-container {
-  margin: calc(5.6rem + 3rem);
+  margin: calc(5.6rem + 1rem);
+}
+.heading {
+  font-size: 6rem;
+  font-weight: 800;
+  color: white;
+  line-height: 120%;
+}
+.caption {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #2A2A2A;
+}
+.button {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: white;
+  text-decoration: none;
+}
+.button .btn-line {
+  margin-top: .3rem;
+  display: block;
+  width: 100%;
+  height: .5rem;
+  background: white;
+  transition: all .3s ease;
+}
+.button:hover .btn-line {
+  height: .4rem;
+  opacity: .5;
+  transform: scale(1.3);
 }
 
 /*# sourceMappingURL=style.css.map*/

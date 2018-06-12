@@ -1,26 +1,46 @@
+.fade-up-in(@duration, @delay, @up) {
+  animation: fadeUpIn @duration ease @delay 1 forwards;
+  @keyframes fadeUpIn {
+      from {
+        opacity: 0;
+        transform: translateY(@up);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+  }
+}
+
 .slideIn(@duration, @delay) {
   animation: slideIn @duration ease @delay 1 forwards;
+  @keyframes slideIn {
+      from {transform: translateX(150vh);}
+      to {transform: translateX(0);}
+  }
 }
+
 
 .slideOut(@duration, @delay) {
   animation: slideOut @duration ease @delay 1 forwards;
+  @keyframes slideOut {
+      from {transform: translateX(0);}
+      to {transform: translateX(150vh);}
+  }
 }
 
 .fadeOut(@duration, @delay) {
   animation: fadeOut @duration ease @delay 1 forwards;
+  @keyframes fadeOut {
+      from {opacity: 1;}
+      to {opacity: 0;}
+  }
 }
 
-@keyframes slideIn {
-    from {transform: translateX(150vh);}
-    to {transform: translateX(0);}
-}
-
-@keyframes slideOut {
-    from {transform: translateX(0);}
-    to {transform: translateX(150vh);}
-}
-
-@keyframes fadeOut {
-    from {opacity: 1;}
-    to {opacity: 0;}
+.fadeIn(@duration, @delay, @curve) {
+  animation: fadeIn @duration @curve @delay 1 forwards;
+  @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+  }
 }

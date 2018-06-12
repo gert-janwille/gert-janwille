@@ -1,0 +1,50 @@
+.intro {
+  z-index: 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#5EBDE9, #0294D0);
+  height: calc(100vh - (@navHeight + 1rem) * 2 );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5rem;
+
+  .image {
+    display: inline-block;
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    div {
+      // border: 1px solid black;
+      .split-image(10);
+      opacity: 0;
+    }
+  }
+}
+
+.main-info {
+  text-align: right;
+
+  .caption {
+    opacity: 0;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    .fade-up-in(.5s, .3s, 5vh);
+  }
+
+  .line-split {
+    display: block;
+    transform: translateX(150vh);
+    .split-lines(10);
+  }
+
+  .button {
+    opacity: 0;
+    .fade-up-in(.3s, .5s, 5vh);
+  }
+}
