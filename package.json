@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "clear && npm run clean && nodemon . & NODE_ENV=development webpack --watch",
-    "start": "clear && npm run serve",
+    "start": "npm run serve",
     "serve": "forever .",
     "clean": "rimraf ./server/public/",
     "production": "clear && npm run clean && NODE_ENV=production webpack -p"
