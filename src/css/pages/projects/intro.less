@@ -5,8 +5,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
+// ONLY ANIMATE THE HOME
+.home-container:not(.detail-container) {
+
+  .button {
+    opacity: 0;
+    .fade-up-in(.3s, .5s, 5vh);
+  }
+
+  .image div {
+    // border: 1px solid black;
+    .split-image(10);
+    opacity: 0;
+  }
+
+  .main-info {
+    .caption {
+      opacity: 0;
+      .fade-up-in(.5s, .3s, 5vh);
+    }
+
+    .line-split {
+      transform: translateX(150vh);
+      .split-lines(10);
+    }
+  }
+}
+
+// ALL CSS (both home and detail)
 .intro {
   pointer-events: none;
   position: fixed;
@@ -29,18 +58,14 @@
   transition: all .5s ease;
 
   &:hover{
-    @marginBorder: 1.5rem;
-
-    height: calc(100vh - (@navHeight - @marginBorder) * 2 );
-    width: calc(100vw - (@navHeight - @marginBorder) * 2);
-    margin: calc(@navHeight - @marginBorder);
-    padding: calc(6rem + @marginBorder);
+    height: calc(100vh - (@navHeight - @homeHoverBorder) * 2 );
+    width: calc(100vw - (@navHeight - @homeHoverBorder) * 2);
+    margin: calc(@navHeight - @homeHoverBorder);
+    padding: calc(6rem + @homeHoverBorder);
   }
 
   .button {
     pointer-events: auto;
-    opacity: 0;
-    .fade-up-in(.3s, .5s, 5vh);
   }
 
   .image {
@@ -51,12 +76,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    div {
-      // border: 1px solid black;
-      .split-image(10);
-      opacity: 0;
-    }
   }
 }
 
@@ -65,16 +84,12 @@
   text-align: right;
 
   .caption {
-    opacity: 0;
     margin-top: 1rem;
     margin-bottom: 4rem;
-    .fade-up-in(.5s, .3s, 5vh);
   }
 
   .line-split {
     display: block;
-    transform: translateX(150vh);
-    .split-lines(10);
   }
 }
 
@@ -85,7 +100,7 @@
   flex-direction: column;
   align-items: center;
 
-  background: #F7F8F9;
+  background: @secondBgColor;
   margin: 0;
   margin-top: 101vh;
   box-shadow: 0 -.5rem 2rem rgba(0, 0, 0, .2);

@@ -1,0 +1,48 @@
+.detail-container {
+
+  .intro {
+    .goFullScreen(.3s, 0s);
+
+    .button {
+      .fadeOut(.3s, .1s);
+    }
+
+  }
+
+  p, li {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: @mainColor;
+    line-height: 180%;
+
+    &.headline, .headline {
+      font-weight: 600;
+
+      &.hard {
+        display: block;
+      }
+    }
+  }
+}
+
+.block {
+  z-index: 1;
+  background: white;
+  width: 100vw;
+}
+
+.main-info-block {
+  margin-top: 100vh;
+  background: @secondBgColor;
+}
+
+.hire-me {
+
+  .button {
+    color: @mainColor;
+
+    .btn-line {
+      background: @secondaryColor;
+    }
+  }
+}

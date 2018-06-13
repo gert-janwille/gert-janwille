@@ -3,7 +3,7 @@ import {func, bool} from 'prop-types';
 import {Route} from 'react-router-dom';
 
 import {inject, observer} from 'mobx-react';
-import DevTools from 'mobx-react-devtools';
+// import DevTools from 'mobx-react-devtools';
 
 import {Projects, Detail} from './';
 import {Navigation, Menu, Footer} from '../components/'
@@ -12,7 +12,7 @@ const App = ({toggleMenu, showMenu}) => (
 
   <section>
 
-    {process.env.NODE_ENV === `production` ? <DevTools/> : null}
+    {/*process.env.NODE_ENV === `production` ? <DevTools/> : null */}
 
     <Navigation toggle={toggleMenu}  />
     {showMenu ? <Menu toggle={toggleMenu} /> : null}
@@ -23,7 +23,7 @@ const App = ({toggleMenu, showMenu}) => (
     </section>
 
     <Footer />
-    
+
   </section>
 
 );

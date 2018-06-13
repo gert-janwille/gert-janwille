@@ -44,3 +44,23 @@
       to {opacity: 1;}
   }
 }
+
+.goFullScreen(@duration, @delay) {
+  animation: goFullScreen @duration ease @delay 1 forwards;
+
+  @keyframes goFullScreen {
+    from {
+      height: calc(100vh - (@navHeight - @homeHoverBorder) * 2 );
+      width: calc(100vw - (@navHeight - @homeHoverBorder) * 2);
+      margin: calc(@navHeight - @homeHoverBorder);
+      padding: calc(6rem + @homeHoverBorder);
+    }
+
+    to {
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      padding: calc(6rem + @homeHoverBorder);
+    }
+  }
+}
