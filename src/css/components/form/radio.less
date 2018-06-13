@@ -1,0 +1,23 @@
+.radio-option {
+  margin-right: 1rem;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: @secondaryColor;
+
+  input[type=radio] {
+    display: none;
+
+    &:checked + label {
+      border: .2rem solid @accentColor;
+      border-radius: 5rem;
+      color: @mainColor;
+    }
+  }
+
+  label {
+    padding: .5rem 1.5rem;
+    transition: all .3s ease;
+  }
+}

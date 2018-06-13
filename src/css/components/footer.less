@@ -1,0 +1,85 @@
+footer {
+  position: absolute;
+  z-index: 998;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: calc(@navHeight * 2);
+  padding: 0 calc(@navHeight + 1rem);
+
+  .footer-logo {
+    display: inline-block;
+
+    background-color: @mainColor; //@accentColor;
+    background-size: contain;
+
+    mask: url(/assets/svg/logo.svg) no-repeat;
+    mask-size: contain;
+    -webkit-mask: url(/assets/svg/logo.svg) no-repeat;
+    -webkit-mask-size: contain;
+
+    width: 15%;
+    height: 50%;
+  }
+
+  .pages {
+    display: flex;
+
+    li {
+      margin-right: 5rem;
+
+      .link {
+        text-decoration: none;
+        color: @secondaryColor;
+        font-size: 1.2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: all .3s ease;
+
+        &:hover {
+          color: @accentColor;
+        }
+      }
+    }
+  }
+
+  .social {
+    display: flex;
+
+    .social-icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      margin-left: 5rem;
+
+      background-color: #6C6C6C;
+      background-size: contain;
+
+      transition: all .3s ease;
+
+      &:hover {
+        background-color: @accentColor;
+      }
+    }
+
+    .github {
+      .mask("/assets/svg/github.svg");
+    }
+
+    .behance {
+      .mask("/assets/svg/behance.svg");
+    }
+
+    .instagram {
+      .mask("/assets/svg/instagram.svg");
+    }
+
+    .linkedin {
+      .mask("/assets/svg/linkedin.svg");
+    }
+  }
+}

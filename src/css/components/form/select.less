@@ -1,0 +1,44 @@
+.select-option {
+  position: relative;
+  display: inline-block;
+  height: 3em;
+  width: 20%;
+  line-height: 3;
+  overflow: hidden;
+  text-align: right;
+
+  select {
+    width: 100%;
+    height: 100%;
+
+    appearance: none;
+    box-shadow: none;
+    outline: 0;
+    border: 0;
+    background: transparent;
+
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: @mainColor;
+    cursor: pointer;
+  }
+
+  select, option {
+    text-align: center;
+    text-align-last: center;
+  }
+
+  &:after {
+    display: inline-block;
+    content: url(/assets/svg/arrow.svg);
+    color: @secondaryColor;
+    background: #F7F8F9;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    pointer-events: none;
+  }
+}

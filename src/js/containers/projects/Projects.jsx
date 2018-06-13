@@ -1,15 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import {ProjectFilter, ProjectItem} from '../../components/';
 import {splitLines, splitImage} from '../../lib/animate';
 
 const Home = () => {
+  const data = [{}, {}, {}, {}, {}];
 
   return(
-    <main>
+    <main className='home-container'>
 
       <section className="intro">
-
         <div className="image">
           {splitImage('/uploads/test-header.png', 8, 'main-img')}
         </div>
@@ -22,7 +23,15 @@ const Home = () => {
               This is how it’s made
               <span className="btn-line"></span>
             </Link>
+        </article>
 
+      </section>
+
+      <section className="projects">
+        <ProjectFilter />
+
+        <article className="projects-container">
+          {data.map((d, id) => <ProjectItem key={id} id={id} {...d}/>)}
         </article>
 
       </section>

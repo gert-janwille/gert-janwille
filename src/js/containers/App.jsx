@@ -6,7 +6,7 @@ import {inject, observer} from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 
 import {Projects, Detail} from './';
-import {Navigation, Menu} from '../components/'
+import {Navigation, Menu, Footer} from '../components/'
 
 const App = ({toggleMenu, showMenu}) => (
 
@@ -22,6 +22,8 @@ const App = ({toggleMenu, showMenu}) => (
       <Route path='/projects/:title' component={Detail} />
     </section>
 
+    <Footer />
+    
   </section>
 
 );

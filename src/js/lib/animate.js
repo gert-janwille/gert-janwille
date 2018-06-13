@@ -7,12 +7,13 @@ export const splitLines = (t, c, s = 12) => {
   return view;
 }
 
+// TODO: generate parts automatic
 export const splitImage = (url, parts, c) => {
   const view = [];
 
   for (let i = 0; i < parts; i++) {
     const splitImageStyle = {
-      background: `url(${url}) no-repeat 0 -${5*i}rem`,
+      background: `url(${url}) no-repeat center -${5*i}rem`,
       backgroundSize: 'cover',
       height: `5rem`,
       width: `100%`

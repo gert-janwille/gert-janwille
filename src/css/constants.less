@@ -1,6 +1,7 @@
 @bgColor: white;
 @accentColor: #FFC80A;
 @mainColor: #2A2A2A;
+@secondaryColor: #9FA3A7;
 
 @fonts: 'Poppins', Helvetica, Arial, sans-serif;
 
@@ -14,4 +15,11 @@
   display: inline-block;
   width: 2rem;
   height: 2rem;
+}
+
+.mask(@path) {
+  mask: url(@path) no-repeat center;
+  mask-size: contain;
+  -webkit-mask: url(@path) no-repeat center;
+  -webkit-mask-size: contain;
 }
