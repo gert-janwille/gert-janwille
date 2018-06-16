@@ -5,6 +5,13 @@
   .split-lines(@i - 1);
 }
 
+.moveInUp (@i) when (@i > 0) {
+  &:nth-of-type(@{i}) {
+    .fade-up-in(.6s, calc(0.25s *  @i), 5rem);
+  }
+  .moveInUp(@i - 1);
+}
+
 
 .split-image (@i) when (@i > 0) {
   &:nth-of-type(odd) {

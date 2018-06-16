@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Name",
+    "name": "name",
+    "required": true
+  },
+  {
+    "label": "Company",
+    "name": "company",
+    "required": false
+  },
+  {
+    "label": "E-mail",
+    "name": "email",
+    "required": true
+  }
+]

@@ -24,7 +24,14 @@ export const splitImage = (url, parts, c) => {
   return view;
 }
 
+export const animateInUp = (arr) => {
+  const view = [];
+  arr.map(a => view.push(<span key={a} className={`moveInUp moveInUp-${a}`}>{a}</span>));
+  return view;
+}
+
 export default {
   splitLines,
-  splitImage
+  splitImage,
+  animateInUp
 }

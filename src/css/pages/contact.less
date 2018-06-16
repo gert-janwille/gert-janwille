@@ -1,0 +1,117 @@
+@import "../components/form/text";
+
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: calc(100vh - @navHeight);
+  padding: 10rem;
+
+  section, form {
+    width: 50%;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 8vw;
+    color: @mainColor;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 8rem;
+  }
+
+  .moveInUp {
+    opacity: 0;
+    display: inline-block;
+    .moveInUp(3);
+  }
+
+  p {
+    opacity: 0;
+    .fadeIn(.5s, 2s, ease);
+    color: @secondaryColor;
+    font-size: 1.2rem;
+    line-height: 180%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .small-icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      background-color: @accentColor;
+      margin-right: 1rem;
+    }
+
+    .call {
+      .mask("/assets/svg/call.svg");
+    }
+
+    .mail {
+      .mask("/assets/svg/mail.svg");
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 8rem;
+  margin-top: -5rem;
+
+  .floating-label {
+    opacity: 0;
+    transform: translateY(-5rem);
+    .fade-up-in(1s, 1s, 5rem);
+  }
+}
+
+.bottom-fields {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  opacity: 0;
+  transform: translateY(-5rem);
+  .fade-up-in(.5s, 1.5s, 3rem);
+
+  p {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: @secondaryColor;
+
+    .required-mark {
+      color: #F9593A;
+      font-size: 2rem;
+      margin-right: .5rem;
+    }
+  }
+
+  input[type=submit] {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: @accentColor;
+    padding: 2rem 5rem;
+    border-radius: 5rem;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all .5s ease;
+
+    &:hover {
+      background: @mainColor;
+    }
+  }
+}
