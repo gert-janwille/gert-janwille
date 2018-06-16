@@ -1,4 +1,5 @@
 import App from './App';
+import About from './About';
 import Contact from './Contact';
 import Projects from './projects/Projects';
 import Detail from './projects/Detail';
@@ -11,5 +12,6 @@ export {
   Detail,
   Contact,
   Invite,
-  Hack
+  Hack,
+  About
 };
