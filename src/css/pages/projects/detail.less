@@ -11,7 +11,7 @@
 
   p, li {
     font-size: 1.3rem;
-    font-weight: 400;
+    font-weight: 300;
     color: @mainColor;
     line-height: 180%;
 
@@ -20,6 +20,7 @@
 
       &.hard {
         display: block;
+        margin-bottom: 2rem;
       }
     }
   }
@@ -29,20 +30,161 @@
   z-index: 1;
   background: white;
   width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-info-block {
-  margin-top: 100vh;
+  margin-top: calc(100vh - @navHeight);
   background: @secondBgColor;
+  padding: @navHeight;
+
+  .text {
+    width: @detailWidth;
+    display: flex;
+    justify-content: space-around;
+    padding: @navHeight;
+  }
+
+  .services {
+    width: 30%;
+    margin-right: 8rem;
+
+    .button {
+      margin-top: 5rem;
+      color: @mainColor;
+
+      .btn-line {
+        background: @secondaryColor;
+      }
+    }
+  }
+
+  .main-info-box {
+    width: 100%;
+  }
+
+  .image {
+    width: @detailWidth;
+    display: flex;
+
+    img {
+      width: 30%;
+      object-fit: cover;
+    }
+
+    img:nth-of-type(1) {
+      width: 70%;
+      margin-right: 2rem;
+    }
+  }
+}
+
+.text-info-block {
+  position: relative;
+  padding: 8rem 0 10rem;
+
+  p {
+    width: calc(@detailWidth * .65);
+  }
+}
+
+.image-info-block {
+  padding: 5rem;
+
+  .image-holder {
+    max-width: @detailWidth;
+    background: linear-gradient(to bottom, @secondBgColor 0%, @secondBgColor 85%, white 85%, white 100%);
+    padding: 8rem 8rem 0 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img, video {
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, .3);
+    }
+  }
 }
 
 .hire-me {
+  padding: 8rem;
+
+  p {
+    text-align: center;
+    width: 40%;
+  }
+
+  .thanks {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+  }
 
   .button {
+    margin-top: 5rem;
+    font-size: 1.5rem;
     color: @mainColor;
 
     .btn-line {
       background: @secondaryColor;
     }
+  }
+}
+
+.other-projects {
+  background: @mainColor;
+  position: relative;
+  height: 30vh;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  .other-project-link {
+    position: relative;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    line-height: 100%;
+    transition: all .3s ease;
+
+    &::before {
+      opacity: .5;
+      content: attr(data-hover);
+    }
+
+    &::after {
+      content: attr(data-hover);
+      position: absolute;
+      color: white;
+      opacity: 1;
+      left: 0;
+      width: 0;
+      transition: width .5s ease;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+
+  &::after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(/assets/img/project-footer.jpg) no-repeat center bottom;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity : .3;
+    z-index: -1;
   }
 }

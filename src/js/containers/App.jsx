@@ -5,38 +5,45 @@ import {Route} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 // import DevTools from 'mobx-react-devtools';
 
-import {Projects, Detail} from './';
+import {Projects, Detail, Contact} from './';
 import {Navigation, Menu, Footer} from '../components/'
 
-const App = ({toggleMenu, showMenu}) => (
+const App = ({toggleMenu, showMenu, scrollIfNeeded}) => {
+  scrollIfNeeded(window.location);
 
-  <section>
+  return (
 
-    {/*process.env.NODE_ENV === `production` ? <DevTools/> : null */}
+    <section>
 
-    <Navigation toggle={toggleMenu}  />
-    {showMenu ? <Menu toggle={toggleMenu} /> : null}
+      {/*process.env.NODE_ENV === `production` ? <DevTools/> : null */}
 
-    <section className='content-container'>
-      <Route exact path='/' component={Projects} />
-      <Route path='/projects/:title' component={Detail} />
+      <Navigation toggle={toggleMenu}  />
+      {showMenu ? <Menu toggle={toggleMenu} /> : null}
+
+      <section className='content-container'>
+        <Route exact path='/' component={Projects} />
+        <Route path='/projects/:title' component={Detail} />
+        <Route path='/contact' component={Contact}/>
+      </section>
+
+      <Footer />
+
     </section>
 
-    <Footer />
-
-  </section>
-
-);
+  );
+}
 
 App.propTypes = {
   toggleMenu: func.isRequired,
-  showMenu: bool.isRequired
+  showMenu: bool.isRequired,
+  scrollIfNeeded: func.isRequired
 };
 
 export default inject(
   ({store}) => ({
     toggleMenu: store.toggleMenu,
-    showMenu: store.showMenu
+    showMenu: store.showMenu,
+    scrollIfNeeded: store.scrollIfNeeded
   })
 )(
   observer(App)

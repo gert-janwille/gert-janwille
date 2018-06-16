@@ -18,7 +18,9 @@ const publicPath = `/`;
 const copy = new CopyWebpackPlugin([{
   from: `./src/assets`,
   to: `assets`
-}], {
+},
+{from: `./src/js/invite.min.js`, to: `js`}
+], {
   ignore: [
     `.DS_Store`
   ]
