@@ -5,7 +5,8 @@ import {Route} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 // import DevTools from 'mobx-react-devtools';
 
-import {Projects, Detail, Contact} from './';
+import {PrivateRoute} from '../components/routing/';
+import {Projects, Detail, Contact, Invite, Hack} from './';
 import {Navigation, Menu, Footer} from '../components/'
 
 const App = ({toggleMenu, showMenu, scrollIfNeeded}) => {
@@ -24,6 +25,8 @@ const App = ({toggleMenu, showMenu, scrollIfNeeded}) => {
         <Route exact path='/' component={Projects} />
         <Route path='/projects/:title' component={Detail} />
         <Route path='/contact' component={Contact}/>
+
+        <PrivateRoute exact path='/hack' component={Hack} redirect={Invite} />
       </section>
 
       <Footer />

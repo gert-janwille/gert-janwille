@@ -1,0 +1,89 @@
+.invite-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: calc(100vh - @navHeight);
+}
+
+.invite-box {
+  opacity: 0;
+  .fade-up-in(1s, 0s, -20rem);
+
+  box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
+  position: relative;
+  background: @secondBgColor;
+  width: 60%;
+  height: 55vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+
+  .invite-icon {
+    background-color: @accentColor;
+    .mask("/assets/svg/invite.svg");
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 3rem;
+  }
+
+  h1, p {
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    color: @mainColor;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: @secondaryColor;
+  }
+
+  form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: red;
+    height: 6rem;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+
+    input {
+      height: 100%;
+      border: none;
+      font-size: 1.4rem;
+      width: 100%;
+      outline: none;
+    }
+
+    input[type=submit] {
+      color: white;
+      text-transform: uppercase;
+      background: @accentColor;
+      width: 25%;
+      border-bottom-right-radius: 1rem;
+      transition: all .3s ease;
+
+      &:hover {
+        background: @mainColor;
+      }
+    }
+
+    input[type=text] {
+      padding-left: 2rem;
+      border-bottom-left-radius: 1rem;
+      letter-spacing: 1rem;
+      text-transform: uppercase;
+    }
+  }
+
+}
