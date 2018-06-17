@@ -12,6 +12,13 @@
   .moveInUp(@i - 1);
 }
 
+.slideInMulti (@i) when (@i > 0) {
+  &:nth-of-type(@{i}) {
+    .slideIn(.6s, calc(.5s + (0.08s *  @i)));
+  }
+  .slideInMulti(@i - 1);
+}
+
 
 .split-image (@i) when (@i > 0) {
   &:nth-of-type(odd) {

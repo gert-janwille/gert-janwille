@@ -13,8 +13,20 @@
     margin: 5rem;
   }
 
+  .skills {
+    width: 30%;
+
+    & > .info-block {
+      opacity: 1;
+      transform: translateX(150vh);
+      .slideInMulti(4);
+    }
+  }
+
   .info-block {
     margin-bottom: 3rem;
+    opacity: 0;
+    .fadeIn(1s, .3s, ease-out);
 
     h4 {
       text-transform: uppercase;
@@ -27,6 +39,9 @@
 }
 
 .about-item {
+  opacity: 0;
+  .moveInUp(100);
+
   position: relative;
   padding: 2rem;
 
@@ -66,5 +81,41 @@
    &.current {
      border-color: @accentColor;
    }
+  }
+}
+
+.skill-item {
+  color: @mainColor;
+  font-size: 1.3rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  &.little {
+    font-size: 1.1rem;
+  }
+
+  .star-indicator {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: @accentColor;
+    .mask("/assets/svg/star.svg");
+  }
+
+  .indication-dot {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid @mainColor;
+    margin-left: .5rem;
+    border-radius: 5rem;
+
+    &.fill {
+      background: @mainColor;
+      border-color: @mainColor
+    }
   }
 }

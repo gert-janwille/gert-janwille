@@ -41,7 +41,7 @@
     {
       "date": "Jun 2017 - Present",
       "job": "Freelance Designer & Developer",
-      "company": "self employed",
+      "company": "Self employed",
       "current": true
     },
 
@@ -66,6 +66,132 @@
       "current": false
     }
   ],
-  "tech": [],
-  "miscellaneoous": []
+
+  "tech": [
+    {
+      "name": "React",
+      "skill": 4
+    },
+    {
+      "name": "Webpack",
+      "skill": 3
+    },
+    {
+      "name": "Node.js",
+      "skill": 4
+    },
+    {
+      "name": "Html & Css",
+      "skill": 4
+    },
+    {
+      "name": "Javascript",
+      "skill": 4
+    },
+    {
+      "name": "Php",
+      "skill": 4
+    },
+    {
+      "name": "MySql",
+      "skill": 3
+    },
+    {
+      "name": "WebGL",
+      "skill": 2
+    },
+    {
+      "name": "C",
+      "skill": 3
+    },
+    {
+      "name": "C++",
+      "skill": 3
+    },
+    {
+      "name": "Python",
+      "skill": 4
+    },
+    {
+      "name": "Assembly",
+      "skill": 1
+    },
+    {
+      "name": "Swift",
+      "skill": 2
+    }
+  ],
+
+  "design": [
+    {
+      "name": "User interfaces",
+      "skill": 3
+    },
+    {
+      "name": "Product Design",
+      "skill": 2
+    },
+    {
+      "name": "Prototyping",
+      "skill": 3
+    },
+    {
+      "name": "Interaction design",
+      "skill": 4
+    },
+    {
+      "name": "Problem solving",
+      "skill": 4
+    },
+    {
+      "name": "Design thinking",
+      "skill": 3
+    }
+  ],
+
+  "tools": [
+    {
+      "name": "Atom",
+      "skill": 4
+    },
+    {
+      "name": "Sketch",
+      "skill": 4
+    },
+    {
+      "name": "Photoshop",
+      "skill": 3
+    },
+    {
+      "name": "Illustrator",
+      "skill": 3
+    },
+    {
+      "name": "Premiere Pro",
+      "skill": 2
+    },
+    {
+      "name": "After Effects",
+      "skill": 3
+    },
+    {
+      "name": "Invision & Marvel",
+      "skill": 4
+    }
+  ],
+
+  "miscellaneous": [
+    {
+      "name": "Golf",
+      "skill": "star"
+    },
+    {
+      "name": "Cooking",
+      "skill": "star"
+    },
+    {
+      "name": "Travelling",
+      "skill": "star"
+    }
+  ]
 }

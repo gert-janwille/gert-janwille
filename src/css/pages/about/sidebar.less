@@ -1,4 +1,7 @@
 .about-container .side-bar {
+  opacity: 0;
+  .fadeIn(1s, 0s, ease-in);
+
   position: fixed;
   left: 0;
   height: calc(100vh - @navHeight);
@@ -63,6 +66,7 @@
   margin: 4rem 0;
 
   a {
+    white-space: nowrap;
     display: flex;
     align-items: center;
     justify-content: space-between;

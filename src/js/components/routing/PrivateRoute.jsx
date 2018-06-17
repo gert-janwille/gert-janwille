@@ -9,7 +9,7 @@ const PrivateRoute = ({component: Component, redirect: RedirectRoute, ...rest}) 
 
   const checkToken = () => {
     if (!token.isValid() && !token.content()) {
-      localStorage.clear('store');
+      localStorage.clear('token');
       token.clear();
       return false;
     }

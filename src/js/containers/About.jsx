@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import {AboutItem, SkillItem} from '../components/'
-import {edu, jobs} from '../../assets/data/about.json';
+import {edu, jobs, tech, tools, design, miscellaneous} from '../../assets/data/about.json';
 
 const About = () => {
 
@@ -13,7 +13,7 @@ const About = () => {
         <img src="/assets/img/profile-pic.jpg" alt="Gert-Jan Wille"/>
         <h1>Gert-Jan Wille</h1>
         <h2>Designer/Developer</h2>
-        <h3>sitegoeshere</h3>
+        <h3>gert-janwille.com</h3>
 
         <Link to={`/contact`} className="hire-btn">Hire now</Link>
 
@@ -56,15 +56,25 @@ const About = () => {
         <article className="skills">
           <div className="info-block">
             <h4>Tech Skills</h4>
-            <SkillItem />
+            {tech.map(e => <SkillItem key={e.name} {...e} />)}
+
+            <p className="skill-item little">And More...</p>
           </div>
+
           <div className="info-block">
             <h4>Design Skills</h4>
-            <SkillItem />
+            {design.map(e => <SkillItem key={e.name} {...e} />)}
+
           </div>
+
+          <div className="info-block">
+            <h4>Tools</h4>
+            {tools.map(e => <SkillItem key={e.name} {...e} />)}
+          </div>
+
           <div className="info-block">
             <h4>Miscellaneous</h4>
-            <SkillItem />
+            {miscellaneous.map(e => <SkillItem key={e.name} {...e} />)}
           </div>
         </article>
 
