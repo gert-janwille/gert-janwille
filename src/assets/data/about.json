@@ -1,0 +1,71 @@
+{
+  "edu": [
+    {
+      "date": "Sept 2018 - Present",
+      "job": "Computer & Cyber Crime",
+      "company": "University College West Flanders",
+      "current": true
+    },
+
+    {
+      "date": "Sept 2017 - Present",
+      "job": "Artificial Intelligence",
+      "company": "University Ghent",
+      "current": true
+    },
+
+    {
+      "date": "Sept 2014 - July 2018",
+      "job": "Digital Design & Development",
+      "company": "University College West Flanders",
+      "current": false
+    },
+
+    {
+      "date": "Sept 2012 - July 2014",
+      "job": "High School Degree Hospitality",
+      "company": "Hotel and Tourism school Spermalie",
+      "current": false
+    },
+
+    {
+      "date": "Sept 2018 - July 2012",
+      "job": "High School Degree Hotel",
+      "company": "Hotel and Tourism school Spermalie",
+      "current": false
+    }
+
+  ],
+
+  "jobs": [
+    {
+      "date": "Jun 2017 - Present",
+      "job": "Freelance Designer & Developer",
+      "company": "self employed",
+      "current": true
+    },
+
+    {
+      "date": "Jul 2018 - Aug 2018",
+      "job": "Personal Driver & administrations",
+      "company": "De Wilde & Baele Gerechtsdeurwaarders",
+      "current": true
+    },
+
+    {
+      "date": "Feb 2018 - Jun 2018",
+      "job": "Intern Front-end Developer",
+      "company": "De Jongens van Boven",
+      "current": false
+    },
+
+    {
+      "date": "May 2014 - Jun 2014",
+      "job": "Intern Receptionist & marketing",
+      "company": "Hotel Domein Westhoek",
+      "current": false
+    }
+  ],
+  "tech": [],
+  "miscellaneoous": []
+}

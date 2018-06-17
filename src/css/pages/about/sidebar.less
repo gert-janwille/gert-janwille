@@ -1,0 +1,166 @@
+.about-container .side-bar {
+  position: fixed;
+  left: 0;
+  height: calc(100vh - @navHeight);
+  width: 25%;
+  padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50rem;
+    margin: 5rem 0 2rem;
+  }
+
+  h1 {
+    color: @mainColor;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  h2, h3 {
+    color: @mainColor;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 120%;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: @secondaryColor;
+    margin-bottom: 1rem;
+  }
+
+  .hire-btn {
+    background: @accentColor;
+    padding: 1.2rem 5rem;
+    border-radius: 5rem;
+    margin: 3rem 0;
+
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-decoration: none;
+
+    transition: all .3s ease;
+
+    &:hover {
+      background: @mainColor;
+    }
+  }
+}
+
+.feature-socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 4rem 0;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+
+    &:hover {
+
+      .social-icon {
+        background: @accentColor;
+      }
+
+      p {
+        color: @accentColor;
+      }
+    }
+
+    .social-icon {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      background: @mainColor;
+      margin-right: 1rem;
+      transition: all .3s ease;
+    }
+
+    .behance {
+      .mask('/assets/svg/behance.svg');
+    }
+
+    .github {
+      .mask('/assets/svg/github.svg');
+    }
+
+    p {
+      font-size: 1.5rem;
+      font-size: 600;
+      color: @mainColor;
+      transition: all .3s ease;
+
+      & .prefix {
+        display: block;
+        color: @secondaryColor;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.all-socials {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  a {
+    margin: .5rem;
+    font-size: 1.2rem;
+    color: @secondaryColor;
+    font-weight: 300;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    transition: all .3s ease;
+
+    &:hover {
+      color: @accentColor;
+
+      .small-icon {
+        background-color: @accentColor;
+      }
+    }
+
+    .small-icon {
+      background-color: @secondaryColor;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: inline-block;
+      margin-right: 1rem;
+
+      transition: all .3s ease;
+    }
+
+    .mail {
+      .mask('/assets/svg/mail.svg');
+    }
+
+    .linkedin {
+      .mask('/assets/svg/linkedin.svg');
+    }
+
+    .twitter {
+      .mask('/assets/svg/twitter.svg');
+    }
+
+    .instagram {
+      .mask('/assets/svg/instagram.svg');
+    }
+  }
+}

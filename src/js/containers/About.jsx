@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import {AboutItem, SkillItem} from '../components/'
+import {edu, jobs} from '../../assets/data/about.json';
+
 const About = () => {
 
   return(
@@ -10,9 +13,9 @@ const About = () => {
         <img src="/assets/img/profile-pic.jpg" alt="Gert-Jan Wille"/>
         <h1>Gert-Jan Wille</h1>
         <h2>Designer/Developer</h2>
-        <h3>gert-janwille.com</h3>
+        <h3>sitegoeshere</h3>
 
-        <Link to={`/contact`}>Hire now</Link>
+        <Link to={`/contact`} className="hire-btn">Hire now</Link>
 
         <article className="feature-socials">
           <a href="https://behance.net/gert-janwille" rel="noopener noreferrer" target="_blank" className="social">
@@ -35,9 +38,37 @@ const About = () => {
 
       </section>
 
-      <section></section>
+      <section className='about-info-container'>
+        <article className="experience">
 
-      <section></section>
+          <div className="info-block">
+            <h4>Education</h4>
+            {edu.map(e => <AboutItem key={e.job} {...e} />)}
+          </div>
+
+          <div className="info-block">
+            <h4>Work Experience</h4>
+            {jobs.map(e => <AboutItem key={e.job} {...e} />)}
+          </div>
+
+        </article>
+
+        <article className="skills">
+          <div className="info-block">
+            <h4>Tech Skills</h4>
+            <SkillItem />
+          </div>
+          <div className="info-block">
+            <h4>Design Skills</h4>
+            <SkillItem />
+          </div>
+          <div className="info-block">
+            <h4>Miscellaneous</h4>
+            <SkillItem />
+          </div>
+        </article>
+
+      </section>
 
     </main>
   )
