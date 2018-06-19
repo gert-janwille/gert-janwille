@@ -103,6 +103,7 @@
     justify-content: center;
 
     img, video {
+      width: 100%;
       box-shadow: 0 1rem 4rem rgba(0, 0, 0, .3);
     }
   }
@@ -152,25 +153,12 @@
     line-height: 100%;
     transition: all .3s ease;
 
-    &::before {
-      opacity: .5;
-      content: attr(data-hover);
+    .first-word {
+      display: block;
     }
 
-    &::after {
-      content: attr(data-hover);
-      position: absolute;
-      color: white;
-      opacity: 1;
-      left: 0;
-      width: 0;
-      transition: width .5s ease;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    &:hover:after {
-      width: 100%;
+    &:hover {
+      color: @accentColor;
     }
   }
 
@@ -186,5 +174,106 @@
     height: 100%;
     opacity : .3;
     z-index: -1;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .detail-container {
+    .main-info-block {
+
+      .text, .image{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .image-info-block {
+    padding: 0;
+
+    .image-holder {
+      max-width: 100%;
+      background: transparent;
+      width: 100%;
+
+      img, video {
+        width: 100vw;
+      }
+    }
+  }
+
+  .hire-me p {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .detail-container {
+    .main-info-block {
+      padding: 0;
+    }
+
+    .text-info-block p {
+      width: 100%;
+      padding: 0 5rem;
+    }
+  }
+
+  .other-projects {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+
+@media only screen and (max-width: 635px) {
+  .detail-container {
+    .main-info-block {
+
+      .text {
+        flex-direction: column-reverse;
+
+        .main-info-box {
+          margin-bottom: 2rem;
+        }
+
+        .services .button {
+          align-self: flex-end;
+        }
+      }
+
+      .image {
+        flex-direction: column;
+        height: 30%;
+
+        img {
+          width: 100%;
+        }
+
+        img:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .detail-container {
+    .main-info-block {
+      .text .services {
+        width: 100%;
+      }
+    }
+  }
+
+  .hire-me {
+    padding: 8rem 1rem;
+
+    p {
+      width: 100%;
+    }
   }
 }

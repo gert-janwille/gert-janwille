@@ -30,8 +30,16 @@ export const animateInUp = (arr) => {
   return view;
 }
 
+export const breakword = str => {
+  return [
+    <span key='first' className="first-word">{str.split(" ")[0]}</span>,
+    <span key='rest' className="rest-word">{str.split(" ").slice(1).join(" ")}</span>
+  ];
+}
+
 export default {
   splitLines,
   splitImage,
-  animateInUp
+  animateInUp,
+  breakword
 }

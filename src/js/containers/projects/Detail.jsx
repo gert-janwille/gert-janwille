@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {MainSlide} from '../../components/';
 
+import {breakword} from '../../lib/animate';
+
 const Detail = ({match}) => {
   const {title} = match.params;
   console.log(title);
@@ -64,9 +66,9 @@ const Detail = ({match}) => {
       </article>
 
       <article className="other-projects block">
-        <Link to={`/`} className="other-project-link" data-hover="Project Number One"></Link>
-        <Link to={`/`} className="other-project-link" data-hover="Project Two"></Link>
-        <Link to={`/`} className="other-project-link" data-hover="Project N°Three"></Link>
+        <Link to={`/`} className="other-project-link">{breakword("Project Number One")}</Link>
+        <Link to={`/`} className="other-project-link">{breakword("Project Two")}</Link>
+        <Link to={`/`} className="other-project-link">{breakword("Project N°Three")}</Link>
       </article>
 
     </section>
