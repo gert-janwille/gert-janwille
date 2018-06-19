@@ -4,16 +4,36 @@
 .filter-bar {
   position: absolute;
   z-index: 100000;
-  width: 100%;
+  width: 100vw;
   position: sticky;
   top: calc(100vh - 8vh);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 25%;
+  padding: 2rem 25vw;
   background: @secondBgColor;
 
   .option {
     display: flex;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .filter-bar {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .filter-bar {
+    height: 8rem;
+    ul {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .select-option {
+      display: none;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {splitLines, splitImage} from '../../lib/animate';
+import {splitLines} from '../../lib/animate';
 
 
 const MainSlide = () => {
@@ -8,7 +8,8 @@ const MainSlide = () => {
   return(
     <section className="intro">
       <div className="image">
-        {splitImage('/uploads/test-header.png', 8, 'main-img')}
+        <img src="/uploads/test-header.png" width="100%" preserveAspectRatio="xMidYMid slice" alt="main-img"/>
+        {/* splitImage('/uploads/test-header.png', 15, 'main-img') */}
       </div>
 
       <article className="main-info">
