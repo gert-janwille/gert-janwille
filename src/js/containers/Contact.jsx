@@ -14,8 +14,10 @@ const Contact = () => {
 
       <section className='contact-info'>
         <h1>{animateInUp(['Get in', 'touch', 'with me'])}</h1>
-        <p><span className="call small-icon"></span>+32 (0)494 91 32 68</p>
-        <p><span className="mail small-icon"></span>hello@gert-janwille.com</p>
+        <div>
+          <a href="tel:+32494913268"><span className="call small-icon"></span>+32 (0)494 91 32 68</a>
+          <a href="mailto:hello@gert-janwille.com"><span className="mail small-icon"></span>hello@gert-janwille.com</a>
+        </div>
       </section>
 
       <form className="contact-form" method='POST'>

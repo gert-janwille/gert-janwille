@@ -28,11 +28,12 @@
 
   .moveInUp {
     opacity: 0;
-    display: inline-block;
+    display: block;
     .moveInUp(3);
   }
 
-  p {
+  a {
+    text-decoration: none;
     opacity: 0;
     .fadeIn(.5s, 2s, ease);
     color: @secondaryColor;
@@ -112,6 +113,54 @@
 
     &:hover {
       background: @mainColor;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+
+    section, form {
+      width: 100%;
+    }
+  }
+
+  .contact-form {
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 675px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+
+    h1 {
+      margin-bottom: 2rem;
+      width: 100%;
+      font-size: 12vw;
+    }
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .contact-container {
+    padding: 2rem;
+
+    .contact-info {
+      padding: 2rem;
     }
   }
 }
