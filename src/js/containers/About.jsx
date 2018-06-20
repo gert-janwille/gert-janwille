@@ -10,12 +10,14 @@ const About = () => {
     <main className="about-container">
 
       <section className='side-bar'>
-        <img src="/assets/img/profile-pic.jpg" alt="Gert-Jan Wille"/>
-        <h1>Gert-Jan Wille</h1>
-        <h2>Designer/Developer</h2>
-        <h3>gert-janwille.com</h3>
+        <div className='main-info'>
+          <img src="/assets/img/profile-pic.jpg" alt="Gert-Jan Wille"/>
+          <h1>Gert-Jan Wille</h1>
+          <h2>Designer/Developer</h2>
+          <h3>gert-janwille.com</h3>
 
-        <Link to={`/contact`} className="hire-btn">Hire now</Link>
+          <Link to={`/contact`} className="hire-btn">Hire now</Link>
+        </div>
 
         <article className="feature-socials">
           <a href="https://behance.net/gert-janwille" rel="noopener noreferrer" target="_blank" className="social">

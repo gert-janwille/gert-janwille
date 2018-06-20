@@ -5,7 +5,7 @@
 }
 
 .about-container .about-info-container {
-  width: 73%;
+  width: 100%;
   display: flex;
 
   article {
@@ -117,5 +117,28 @@
       background: @mainColor;
       border-color: @mainColor
     }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .about-container .about-info-container {
+    flex-direction: column;
+
+    article, .skills {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .about-container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .about-container .about-info-container article {
+    margin: 2rem;
+    width: 90%;
   }
 }
