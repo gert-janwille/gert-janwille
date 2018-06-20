@@ -86,3 +86,47 @@
   }
 
 }
+
+@media only screen and (max-width: 800px) {
+  .invite-box {
+    width: 100%;
+    height: calc(80vh - @navHeight);
+    box-shadow: none;
+    border-radius: 0;
+    margin: 2rem;
+
+    form {
+      border-radius: 0 0 0 0;
+
+      input[type=submit] {
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .invite-box {
+    margin: 0;
+    height: calc(100vh - @navHeight);
+
+    form {
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+
+      input {
+        height: 5rem;
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      input[type=text] {
+        margin-top: 2rem;
+        font-size: 2.5vw;
+      }
+    }
+  }
+}
