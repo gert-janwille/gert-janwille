@@ -11,6 +11,7 @@ const {getIfUtils, removeEmpty} = require(`webpack-config-utils`);
 const {ifProduction} = getIfUtils(process.env.NODE_ENV);
 
 const extractCSS = new ExtractTextWebpackPlugin({filename: "css/style.css"});
+const autoprefixer = require('autoprefixer');
 
 // change for production build on different server path
 const publicPath = `/`;
@@ -59,7 +60,10 @@ const config = {
           {
             loader: `css-loader`,
             options: {
-              importLoaders: 1
+              importLoaders: 1,
+              plugins: () => autoprefixer({
+                browsers: ['last 3 versions', '> 1%']
+              })
             }
           },
           {

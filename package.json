@@ -28,6 +28,7 @@
     "mongoose-bcrypt": "^1.4.2"
   },
   "devDependencies": {
+    "autoprefixer": "^8.6.3",
     "babel-core": "^6.21.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.0.0",
