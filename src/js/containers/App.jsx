@@ -6,7 +6,7 @@ import {inject, observer} from 'mobx-react';
 // import DevTools from 'mobx-react-devtools';
 
 import {PrivateRoute} from '../components/routing/';
-import {Projects, Detail, Contact, Invite, Hack, About} from './';
+import {Projects, Detail, Contact, Invite, Hack, About, PrivacyPolicy} from './';
 import {Navigation, Menu, Footer} from '../components/'
 
 const App = ({toggleMenu, showMenu, scrollIfNeeded}) => {
@@ -26,6 +26,7 @@ const App = ({toggleMenu, showMenu, scrollIfNeeded}) => {
         <Route path='/projects/:title' component={Detail} />
         <Route path='/contact' component={Contact} />
         <Route path='/about' component={About} />
+        <Route path='/privacy-policy' component={PrivacyPolicy} />
 
         <PrivateRoute exact path='/hack' component={Hack} redirect={Invite} />
       </section>

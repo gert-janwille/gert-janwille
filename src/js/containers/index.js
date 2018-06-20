@@ -5,6 +5,7 @@ import Projects from './projects/Projects';
 import Detail from './projects/Detail';
 import Invite from './hack/Invite';
 import Hack from './hack/Hack';
+import PrivacyPolicy from './PrivacyPolicy';
 
 export {
   App,
@@ -13,5 +14,6 @@ export {
   Contact,
   Invite,
   Hack,
-  About
+  About,
+  PrivacyPolicy
 };

@@ -12,6 +12,7 @@ const Footer = () => (
 
     <ul className="pages">
       {menuItems.map(({name, path}) => <li key={name}><Link className='link' to={path}>{name}</Link></li>)}
+      <li><Link className='link' to={`/privacy-policy`}>Privacy Policy</Link></li>
     </ul>
 
     <div className="social">

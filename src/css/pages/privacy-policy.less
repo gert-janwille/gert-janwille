@@ -1,0 +1,53 @@
+.pp-container {
+  display: flex;
+  justify-content: center;
+
+  section {
+    width: 50%;
+    color: @mainColor;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 5rem 0;
+  }
+
+  .caption {
+    color: @mainColor;
+    margin: 3rem 0 1rem;
+  }
+
+  p {
+    line-height: 180%;
+    font-size: 1.2rem;
+    color: @secondaryColor;
+  }
+
+  ul {
+    margin: 1rem 0;
+    li {
+      line-height: 180%;
+      font-size: 1.2rem;
+      color: @secondaryColor;
+      list-style-type: disc;
+      margin-left: 5rem;
+    }
+  }
+
+  p a {
+    color: @accentColor;
+    transition: all .3s ease;
+
+    &:hover {
+      color: @mainColor;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .pp-container section {
+    width: 100%;
+    padding: 2rem;
+  }
+}
