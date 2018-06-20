@@ -24,8 +24,7 @@ module.exports = [
 
         payload: {
           login: Joi.string().min(3).required(),
-          password: Joi.string().min(3).required(),
-          audience: Joi.string().min(3).required()
+          password: Joi.string().min(3).required()
         }
 
       }
@@ -34,7 +33,7 @@ module.exports = [
 
     handler: (req, res) => {
 
-      const {login, password, audience} = req.payload;
+      const {login, password} = req.payload;
       const isActive = true;
 
       User.findOne({
@@ -67,7 +66,7 @@ module.exports = [
           const {_id: subject} = user;
           user = omit(user.toJSON(), [`__v`, `password`, `isActive`, `_id`, `created`]);
 
-          return res.token(user, {subject, audience});
+          return res.token(user, {subject, audience: [1]});
 
         });
 

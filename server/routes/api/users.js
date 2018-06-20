@@ -31,7 +31,6 @@ module.exports = [
         },
 
         payload: {
-          username: Joi.string().min(3).required(),
           email: Joi.string().email().required(),
           password: Joi.string().min(3).required(),
           isActive: Joi.boolean(),
@@ -44,7 +43,7 @@ module.exports = [
 
     handler: (req, res) => {
 
-      let fields = [`username`, `email`, `password`];
+      let fields = [`email`, `password`];
 
       if (req.hasScope(Scopes.ADMIN)) {
         fields = [...fields, `isActive`, `scope`];
