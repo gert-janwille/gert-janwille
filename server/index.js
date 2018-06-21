@@ -19,6 +19,8 @@ const server = new Server({
 
 server.connection({port, routes: {cors: true}});
 
+
+server.register(require('hapi-geo-locate'), pluginHandler);
 server.register(require(`./modules/`), pluginHandler);
 server.register(require(`./routes/`), pluginHandler);
 

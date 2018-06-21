@@ -26,6 +26,18 @@ module.exports = [
 
   {
 
+    method: `GET`,
+    path: `${base}/tags`,
+
+    handler: (req, res) => {
+      Project.find().distinct('services')
+        .then(tags => res({tags}));
+    }
+
+  },
+
+  {
+
     method: `POST`,
     path: `${base}/projects`,
 
