@@ -1,78 +1,118 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {inject, observer} from 'mobx-react';
+import {isEmpty} from 'lodash';
+
 import {MainSlide} from '../../components/';
-
 import {breakword} from '../../lib/animate';
+import {createValidString, getRandom} from '../../lib/util';
 
-const Detail = ({match}) => {
-  const {title} = match.params;
-  console.log(title);
+class Detail extends Component {
 
-  return(
-    <section className='home-container detail-container'>
-      <MainSlide />
+  state = {
+    url: null,
+    detailProject: {}
+  }
 
-      <article className="main-info-block block">
-        <div className="text">
+  componentDidMount = () => {
+    const {getDetail, match} = this.props;
+    this.detailProject = getDetail(match.params.title);
+  }
 
-          <ul className="services">
-            <li className="headline hard">Our Services</li>
+  renderPreview = () => {
+    const {title, preview} = this.detailProject;
+    const arr = preview.split('.');
 
-            <li className="service-item">Interaction Design</li>
-            <li className="service-item">Front-End Development</li>
-            <li className="service-item">Serious gaming</li>
+    switch (arr[arr.length - 1]) {
+      case 'mp4':
+        return(<video src={`/uploads/${createValidString(title)}/${preview}`} controls={false} loop autoPlay></video>);
 
-            <Link className='button' to={`/project/project-name`}>
-              See in action
-              <span className="btn-line"></span>
-            </Link>
+      case 'png':
+      case 'jpg':
+        return (<img src={`/uploads/${createValidString(title)}/${preview}`} alt="feature"/>);
 
-          </ul>
+      default:
+        return (<img src={`/uploads/${createValidString(title)}/${preview}`} alt="feature"/>);
+    }
+  }
 
-          <p className='main-info-box'>
-            <span className="headline hard">About the project </span>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  render() {
+    const {detailProject, projects} = this.props;
+
+    if (isEmpty(detailProject)) return(<p>fetching</p>);
+    this.detailProject = detailProject;
+
+    const {title, services, url, introText, bigImage, smallImage, centerText} = this.detailProject;
+
+    return(
+      <section className='home-container detail-container'>
+        <MainSlide {...detailProject} />
+
+        <article className="main-info-block block">
+          <div className="text">
+
+            <ul className="services">
+              <li className="headline hard">Our Services</li>
+              {services.map(s => <li key={s} className="service-item">{s}</li>)}
+
+              <a className='button' href={url} target="_blank" rel='noopener noreferrer'>
+                See in action
+                <span className="btn-line"></span>
+              </a>
+
+            </ul>
+
+            <p className='main-info-box'>
+              <span className="headline hard">About the project </span>
+              {introText}
+            </p>
+
+          </div>
+
+          <div className="image">
+            <img src={`/uploads/${createValidString(title)}/${bigImage}`} alt="work1" />
+            <img src={`/uploads/${createValidString(title)}/${smallImage}`} alt="work2" />
+          </div>
+
+        </article>
+
+        <article className="text-info-block block">
+          <p>
+            <span className="headline">About the project - </span>
+            {centerText}
           </p>
+        </article>
 
-        </div>
+        <article className="image-info-block block">
+          <div className="image-holder">
+            {this.renderPreview()}
+          </div>
+        </article>
 
-        <div className="image">
-          <img src="/uploads/test-detail-long.jpg" alt="work1" />
-          <img src="/uploads/test-detail-short.jpg" alt="work2" />
-        </div>
+        <article className="hire-me block">
+          <p className="thanks pf-400">Want something like this?</p>
+          <p>Let's just collaborate together and we will create a wonderfull piece of happiness and magic.</p>
+          <Link className='button' to={`/contact`}>
+            Contact me
+            <span className="btn-line"></span>
+          </Link>
+        </article>
 
-      </article>
+        <article className="other-projects block">
+          {getRandom(projects, 3).map(l => <Link key={l.title} to={`/projects/${createValidString(l.title)}`} className="other-project-link">{breakword(l.title)}</Link>)}
+        </article>
 
-      <article className="text-info-block block">
-        <p>
-          <span className="headline">About the project - </span>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-        </p>
-      </article>
-
-      <article className="image-info-block block">
-        <div className="image-holder">
-          <img src="/uploads/test-detail-feature.jpg" alt="feature"/>
-        </div>
-      </article>
-
-      <article className="hire-me block">
-        <p className="thanks pf-400">Want something like this?</p>
-        <p>Let's just collaborate together and we will create a wonderfull piece of happiness and magic.</p>
-        <Link className='button' to={`/contact`}>
-          Contact me
-          <span className="btn-line"></span>
-        </Link>
-      </article>
-
-      <article className="other-projects block">
-        <Link to={`/`} className="other-project-link">{breakword("Project Number One")}</Link>
-        <Link to={`/`} className="other-project-link">{breakword("Project Two")}</Link>
-        <Link to={`/`} className="other-project-link">{breakword("Project N°Three")}</Link>
-      </article>
-
-    </section>
-  );
+      </section>
+    );
+  }
 }
 
-export default Detail
+export default inject(
+  ({projectStore}) => ({
+    getDetail: projectStore.getDetail,
+    detailProject: projectStore.detailProject,
+    projects: projectStore.projects
+  })
+)(
+  observer(Detail)
+);

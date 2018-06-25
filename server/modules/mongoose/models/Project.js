@@ -53,6 +53,11 @@ const schema = new Schema({
     required: true
   },
 
+  color: {
+    type: Array,
+    required: true
+  },
+
   isActive: {
     type: Boolean,
     default: true

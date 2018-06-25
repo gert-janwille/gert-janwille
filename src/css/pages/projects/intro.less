@@ -44,8 +44,6 @@
   right: 0;
   bottom: 0;
 
-  background: linear-gradient(#5EBDE9, #0294D0);
-
   height: calc(100vh - (@navHeight + 1rem) * 2 );
   width: calc(100vw - (@navHeight + 1rem) * 2);
   margin: calc(@navHeight + 1rem);
@@ -56,6 +54,8 @@
   padding: 5rem;
 
   transition: all .5s ease;
+
+  .fadeIn(.2s, 0s, ease);
 
   &:hover{
     height: calc(100vh - (@navHeight - @homeHoverBorder) * 2 );

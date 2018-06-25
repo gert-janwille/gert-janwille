@@ -25,20 +25,23 @@ module.exports = [
     handler: (req, res) => {
 
       const invite = makeInviteCode();
-      const data = pick({invite, ...req.location}, [`invite`, `ip`, `hostname`, `city`, `region`, `country`, `loc`, `postal`, `org`])
+      const data = pick({invite, ...req.location, ip: req.info.remoteAddress}, [`invite`, `ip`, `hostname`, `city`, `region`, `country`, `loc`, `postal`, `org`])
 
       const inviteModel = new Invite(data);
 
       inviteModel.save()
         .then(u => {
           return res({
-            ...req.location,
+            ip: req.info.remoteAddress,
             success: 1,
             code: Buffer.from(invite).toString('base64'),
             format: "encoded"
           })
         })
-        .catch(() => res(Boom.badRequest(`cannot save invite code`)));
+        .catch((e) => {
+          console.log(e);
+          res(Boom.badRequest(`cannot save invite code`))
+        });
 
     }
 

@@ -74,13 +74,15 @@ module.exports = [
           mainImage: Joi.any().required(),
           bigImage: Joi.any().required(),
           smallImage: Joi.any().required(),
-          preview: Joi.any().required()
+          preview: Joi.any().required(),
+
+          color: Joi.array().required(),
         }
       }
     },
 
     handler: (req, res) => {
-      const data = pick(req.payload, [`title`, `subtitle`, `services`, `url`, `introText`, `centerText`]);
+      const data = pick(req.payload, [`title`, `subtitle`, `services`, `url`, `introText`, `centerText`, `color`]);
       const upload = pick(req.payload, [`mainImage`, `bigImage`, `smallImage`, `preview`])
 
       for (var key in upload) data[key] = uploader(upload[key], `${createValidString(data.title)}/`);

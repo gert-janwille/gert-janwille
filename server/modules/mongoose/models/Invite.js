@@ -5,7 +5,7 @@ const schema = new Schema({
 
   ip: {
     type: String,
-    required: true
+    default: "unkown"
   },
 
   invite: {

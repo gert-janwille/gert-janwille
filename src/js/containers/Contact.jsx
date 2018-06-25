@@ -1,12 +1,16 @@
 import React from 'react';
+import {inject, observer} from 'mobx-react';
+
 import {Text, Textarea} from '../components/form/';
 import Fields from '../../assets/data/contact.json';
 import {animateInUp} from '../lib/animate';
 
-const Contact = () => {
+const Contact = ({setData, sentMail, errors}) => {
 
-  const handleOnChange = e => {
-    console.log({name: e.target.name, value: e.target.value});
+  const handleOnChange = e => setData({name: e.target.name, value: e.target.value});
+  const handleMailMe = e => {
+    e.preventDefault();
+    sentMail(e.target);
   }
 
   return(
@@ -20,11 +24,11 @@ const Contact = () => {
         </div>
       </section>
 
-      <form className="contact-form" method='POST'>
+      <form className="contact-form" method='POST' onSubmit={handleMailMe}>
 
-        {Fields.map(({label, name, required}) => <Text key={name} label={label} value={name} onChange={handleOnChange} required={required} />)}
+        {Fields.map(({label, name, required}) => <Text key={name} label={label} value={name} onChange={handleOnChange} required={required} error={errors[name]} />)}
 
-        <Textarea label='Message' value='message' onChange={handleOnChange} required/>
+        <Textarea label='Message' value='message' onChange={handleOnChange} error={errors.message} required/>
 
         <div className="bottom-fields">
           <p><span className="required-mark">*</span>Required Field</p>
@@ -37,4 +41,12 @@ const Contact = () => {
   )
 }
 
-export default Contact;
+export default inject(
+  ({contactStore}) => ({
+    setData: contactStore.setData,
+    sentMail: contactStore.sentMail,
+    errors: contactStore.errors
+  })
+)(
+  observer(Contact)
+);

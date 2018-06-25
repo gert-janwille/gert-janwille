@@ -67,11 +67,16 @@
   align-items: flex-end;
   padding-left: 8rem;
   margin-top: -5rem;
+  transition: all .3s ease-in-out;
 
   .floating-label {
     opacity: 0;
     transform: translateY(-5rem);
     .fade-up-in(1s, 1s, 5rem);
+  }
+
+  &.send {
+    transform: translateX(100vw);
   }
 }
 

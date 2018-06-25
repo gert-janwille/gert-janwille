@@ -1,11 +1,18 @@
 import React from 'react';
 import serialize from '../../lib/serialize';
+import {inject, observer} from 'mobx-react';
 
-const Invite = () => {
+const Invite = ({redeem, history}) => {
 
   const handleSubmitInviteCode = e => {
     e.preventDefault();
-    console.log(serialize(e.target));
+    try {
+      redeem(serialize(e.target))
+        .then(success => success ? history.push(`/hack`) : null)
+        .catch(e.target.reset());
+    } catch(d) {
+      e.target.reset();
+    }
   }
 
   return(
@@ -26,4 +33,10 @@ const Invite = () => {
   )
 }
 
-export default Invite;
+export default inject(
+  ({hackStore}) => ({
+    redeem: hackStore.redeem
+  })
+)(
+  observer(Invite)
+);

@@ -1,14 +1,41 @@
-// import {observable} from 'mobx';
+import {observable, action} from 'mobx';
+import {isEmpty} from 'lodash';
+
+import ProjectAPI from '../lib/api/projects';
+import {getrandomInt, createValidString} from '../lib/util';
 
 class Store {
 
+  @observable projects = [];
+  @observable tags = [];
+
+  @observable mainSlide = {};
+  @observable detailProject = {};
 
   init = () => {
-    console.log("hello world");
+    ProjectAPI.get()
+      .then(({projects}) => this.projects = projects)
+      .then(() => this.mainSlide = getrandomInt(this.projects));
+
+    ProjectAPI.getTags()
+      .then(({tags}) => this.tags = tags);
   }
 
   constructor (){
     this.init();
+  }
+
+
+  @action getDetail = url => {
+    return this.detailProject = isEmpty(this.projects)
+      ? this.fetchAndFind(url)
+      : this.projects.filter(({title}) => createValidString(title) === url)[0];
+  }
+
+  fetchAndFind = url => {
+    ProjectAPI.get()
+      .then(({projects}) => this.projects = projects)
+      .then(projects => this.detailProject = projects.filter(({title}) => createValidString(title) === url)[0]);
   }
 
 }

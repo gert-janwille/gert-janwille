@@ -3,6 +3,8 @@ import {pick, assign} from 'lodash';
 export const isEven = n => n === parseFloat(n)? !(n%2) : void 0;
 export const isPathName = n => window.location.pathname === n ? true : false;
 export const getbytype = (arr, type) => arr.filter(o => o.type === type);
+export const createValidString = str => str.split(' ').join('-').toLowerCase().replace(/[.,_`~()]/g,"");
+export const getrandomInt = arr => arr[Math.floor(Math.random() * arr.length)];
 
 export const splitIntoLines = (input, len) => {
     let i;
@@ -12,7 +14,6 @@ export const splitIntoLines = (input, len) => {
     const words = input.split(' ');
 
     for (i = 0; i < words.length;) {
-        // check if adding this word would exceed the len
         temp = addWordOntoLine(lineSoFar, words[i]);
         if (temp.length > len) {
             if (lineSoFar.length === 0) {
@@ -45,11 +46,29 @@ export const buildBody = (data, values, extra) => {
   return JSON.stringify(data);
 };
 
+export const getRandom = (a, n) => {
+  const tmp = [];
+  const arr = a.slice(0);
+  const t = n > arr.length ? arr.length : n;
+
+  for (let i = 0; i < t; i++) {
+    const x = Math.floor(Math.random() * arr.length);
+    tmp.push(arr[x]);
+    arr.splice(x, 1);
+
+  }
+
+  return tmp;
+}
+
 export default {
   isEven,
   isPathName,
   splitIntoLines,
   addWordOntoLine,
   buildBody,
-  getbytype
+  getbytype,
+  createValidString,
+  getrandomInt,
+  getRandom
 }
