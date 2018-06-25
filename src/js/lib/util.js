@@ -1,5 +1,8 @@
+import {pick, assign} from 'lodash';
+
 export const isEven = n => n === parseFloat(n)? !(n%2) : void 0;
 export const isPathName = n => window.location.pathname === n ? true : false;
+export const getbytype = (arr, type) => arr.filter(o => o.type === type);
 
 export const splitIntoLines = (input, len) => {
     let i;
@@ -36,9 +39,17 @@ export const addWordOntoLine = (line, word) => {
     return(line += word);
 }
 
+export const buildBody = (data, values, extra) => {
+  data = pick(data, values);
+  if (extra) data = assign(data, extra);
+  return JSON.stringify(data);
+};
+
 export default {
   isEven,
   isPathName,
   splitIntoLines,
-  addWordOntoLine
+  addWordOntoLine,
+  buildBody,
+  getbytype
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {inject, observer} from 'mobx-react';
 
-import {AboutItem, SkillItem} from '../components/'
-import {edu, jobs, tech, tools, design, miscellaneous} from '../../assets/data/about.json';
+import {AboutItem, SkillItem} from '../components/';
+import {getbytype} from '../lib/util';
 
-const About = () => {
+const About = ({skills, experiences}) => {
 
   return(
     <main className="about-container">
@@ -45,12 +46,12 @@ const About = () => {
 
           <div className="info-block">
             <h4>Education</h4>
-            {edu.map(e => <AboutItem key={e.job} {...e} />)}
+            {getbytype(experiences, 'edu').map(e => <AboutItem key={e.job} {...e} />)}
           </div>
 
           <div className="info-block">
             <h4>Work Experience</h4>
-            {jobs.map(e => <AboutItem key={e.job} {...e} />)}
+            {getbytype(experiences, 'job').map(e => <AboutItem key={e.job} {...e} />)}
           </div>
 
         </article>
@@ -58,25 +59,25 @@ const About = () => {
         <article className="skills">
           <div className="info-block">
             <h4>Tech Skills</h4>
-            {tech.map(e => <SkillItem key={e.name} {...e} />)}
+            {getbytype(skills, 'tech').map(e => <SkillItem key={e.name} {...e} />)}
 
             <p className="skill-item little">And More...</p>
           </div>
 
           <div className="info-block">
             <h4>Design Skills</h4>
-            {design.map(e => <SkillItem key={e.name} {...e} />)}
+            {getbytype(skills, 'design').map(e => <SkillItem key={e.name} {...e} />)}
 
           </div>
 
           <div className="info-block">
             <h4>Tools</h4>
-            {tools.map(e => <SkillItem key={e.name} {...e} />)}
+            {getbytype(skills, 'tool').map(e => <SkillItem key={e.name} {...e} />)}
           </div>
 
           <div className="info-block">
             <h4>Miscellaneous</h4>
-            {miscellaneous.map(e => <SkillItem key={e.name} {...e} />)}
+            {getbytype(skills, 'miscellaneous').map(e => <SkillItem key={e.name} {...e} />)}
           </div>
         </article>
 
@@ -86,4 +87,11 @@ const About = () => {
   )
 }
 
-export default About;
+export default inject(
+  ({aboutStore}) => ({
+    skills: aboutStore.skills,
+    experiences: aboutStore.experiences
+  })
+)(
+  observer(About)
+);
