@@ -61,6 +61,19 @@ module.exports = [
       }
     }
 
+  },
+
+  {
+
+    method: `GET`,
+    path: `/social/{param*}`,
+
+    handler: {
+      directory: {
+        path: `./assets/social`
+      }
+    }
+
   }
 
 ];
