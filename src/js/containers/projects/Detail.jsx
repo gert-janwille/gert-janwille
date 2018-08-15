@@ -3,9 +3,8 @@ import {Link} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 import {isEmpty} from 'lodash';
 
-import {MainSlide} from '../../components/';
-import {breakword} from '../../lib/animate';
-import {createValidString, getRandom} from '../../lib/util';
+import {MainSlide, DotIndicator} from '../../components/';
+import {createValidString} from '../../lib/util';
 
 class Detail extends Component {
 
@@ -17,6 +16,13 @@ class Detail extends Component {
   componentDidMount = () => {
     const {getDetail, match} = this.props;
     this.detailProject = getDetail(match.params.title);
+  }
+
+  handleChangeDetail = e => {
+    e.preventDefault();
+    const {getOtherProject} = this.props;
+    const newItem = getOtherProject(e.currentTarget.getAttribute('data-type'));
+    window.history.pushState(null, null, `/projects/${createValidString(newItem.title)}`);
   }
 
   renderPreview = () => {
@@ -37,7 +43,7 @@ class Detail extends Component {
   }
 
   render() {
-    const {detailProject, projects} = this.props;
+    const {detailProject} = this.props;
 
     if (isEmpty(detailProject)) return(<p>fetching</p>);
     this.detailProject = detailProject;
@@ -46,6 +52,7 @@ class Detail extends Component {
 
     return(
       <section className='home-container detail-container'>
+        <DotIndicator />
         <MainSlide {...detailProject} />
 
         <article className="main-info-block block">
@@ -99,7 +106,8 @@ class Detail extends Component {
         </article>
 
         <article className="other-projects block">
-          {getRandom(projects, 3).map(l => <Link key={l.title} to={`/projects/${createValidString(l.title)}`} className="other-project-link">{breakword(l.title)}</Link>)}
+          <Link to={`/projects/`} className="other-project-link" data-type='previous' onClick={this.handleChangeDetail}>&lt; Previous</Link>
+          <Link to={`/projects/`} className="other-project-link" data-type='next' onClick={this.handleChangeDetail}>Next &gt;</Link>
         </article>
 
       </section>
@@ -111,7 +119,7 @@ export default inject(
   ({projectStore}) => ({
     getDetail: projectStore.getDetail,
     detailProject: projectStore.detailProject,
-    projects: projectStore.projects
+    getOtherProject: projectStore.getOtherProject
   })
 )(
   observer(Detail)

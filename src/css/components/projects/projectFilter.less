@@ -6,14 +6,22 @@
   width: 100vw;
   position: sticky;
   top: calc(100vh - 8vh);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 25vw;
+  padding: 2rem 0;
   background: @secondBgColor;
+
+  form, form ul {
+    width: 100%;
+  }
 
   .option {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    li {
+      white-space: nowrap;
+    }
   }
 }
 

@@ -6,6 +6,7 @@ import ProjectFilter from './projects/ProjectFilter';
 import MainSlide from './projects/MainSlide';
 import AboutItem from './about/AboutItem';
 import SkillItem from './about/SkillItem';
+import DotIndicator from './navigation/DotIndicator';
 
 export {
   Navigation,
@@ -15,5 +16,6 @@ export {
   ProjectFilter,
   MainSlide,
   AboutItem,
-  SkillItem
+  SkillItem,
+  DotIndicator
 };

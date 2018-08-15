@@ -10,7 +10,7 @@ const ProjectItem = ({id, title, services, mainImage}) => {
       <div className="image-holder">
 
         <img src={`/uploads/${createValidString(title)}/${mainImage}`} width="100%" alt={title}/>
-        <p className="views"><span className="eye small-icon"></span>100</p>
+        {/* <p className="views"><span className="eye small-icon"></span>100</p> */}
 
       </div>
 

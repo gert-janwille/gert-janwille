@@ -1,25 +1,29 @@
 import React from 'react';
+import {inject, observer} from 'mobx-react';
 
-import {Radio, Select} from '../form/';
+import {Radio} from '../form/';
 
-const ProjectFilter = () => {
-  const options = ['New first', 'Latest First'];
+const ProjectFilter = ({tags, filter}) => {
+
+  const handleChangeItems = e => filter(e.target.id);
 
   return(
     <form className="filter-bar">
       <ul className="option">
 
-        <Radio value="All" name="option" checked={true}/>
-        <Radio value="web" name="option"/>
-        <Radio value="experiential" name="option"/>
-        <Radio value="branding" name="option"/>
+        <li><Radio value="All" name="option" checked={true} onClick={handleChangeItems}/></li>
+        {tags.map(t => <li key={t}><Radio value={t} name="option" onClick={handleChangeItems}/></li>)}
 
       </ul>
-
-      <Select id='choose' name='choose' options={options}/>
-
     </form>
   );
 }
 
-export default ProjectFilter
+export default inject(
+  ({projectStore}) => ({
+    tags: projectStore.tags,
+    filter: projectStore.filter
+  })
+)(
+  observer(ProjectFilter)
+);
