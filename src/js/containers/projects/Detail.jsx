@@ -42,6 +42,15 @@ class Detail extends Component {
     }
   }
 
+  renderGoToProjectBtn = url => {
+    return(
+      <a className='button' href={url} target="_blank" rel='noopener noreferrer'>
+        See in action
+        <span className="btn-line"></span>
+      </a>
+    )
+  }
+
   render() {
     const {detailProject} = this.props;
 
@@ -62,10 +71,7 @@ class Detail extends Component {
               <li className="headline hard">Our Services</li>
               {services.map(s => <li key={s} className="service-item">{s}</li>)}
 
-              <a className='button' href={url} target="_blank" rel='noopener noreferrer'>
-                See in action
-                <span className="btn-line"></span>
-              </a>
+              {url ? this.renderGoToProjectBtn(url) : null}
 
             </ul>
 
