@@ -16,7 +16,9 @@ const autoprefixer = require('autoprefixer');
 // change for production build on different server path
 const publicPath = `/`;
 
-const copy = new CopyWebpackPlugin([{
+const copy = new CopyWebpackPlugin([
+  './src/manifest.json',
+  {
   from: `./src/assets`,
   to: `assets`
 },

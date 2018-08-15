@@ -14,6 +14,17 @@ module.exports = [
   {
 
     method: `GET`,
+    path: `/manifest.json`,
+
+    handler: {
+      file: `manifest.json`
+    }
+
+  },
+
+  {
+
+    method: `GET`,
     path: `/js/{param*}`,
 
     handler: {
