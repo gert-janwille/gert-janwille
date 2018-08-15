@@ -46,7 +46,7 @@ const config = {
 
   output: {
     path: path.join(__dirname, `server`, `public`),
-    filename: `js/[name].[hash].js`,
+    filename: `js/[name].js`,
     publicPath
   },
 
