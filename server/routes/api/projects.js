@@ -65,7 +65,7 @@ module.exports = [
           title: Joi.string().min(3).required(),
           subtitle: Joi.string().min(3).required(),
 
-          services: Joi.array().min(3).required(),
+          services: Joi.array().min(1).required(),
           url: Joi.string().min(3),
 
           introText: Joi.string().min(3).required(),
