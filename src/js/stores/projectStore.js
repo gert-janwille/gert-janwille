@@ -17,7 +17,7 @@ class Store {
 
   init = () => {
     ProjectAPI.get()
-      .then(({projects}) => this.projects = this.allProjects = projects)
+      .then(({projects}) => this.projects = projects.sort((a,b) => new Date(b.created) - new Date(a.created)))
       .then(() => this.mainSlide = getrandomInt(this.projects));
 
     ProjectAPI.getTags()
