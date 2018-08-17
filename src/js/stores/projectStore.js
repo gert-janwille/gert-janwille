@@ -2,7 +2,7 @@ import {observable, action} from 'mobx';
 import {isEmpty} from 'lodash';
 
 import ProjectAPI from '../lib/api/projects';
-import {getrandomInt, createValidString} from '../lib/util';
+import {createValidString} from '../lib/util';
 
 class Store {
 
@@ -18,7 +18,7 @@ class Store {
   init = () => {
     ProjectAPI.get()
       .then(({projects}) => this.projects = this.allProjects = projects.sort((a,b) => new Date(b.created) - new Date(a.created)))
-      .then(() => this.mainSlide = getrandomInt(this.projects));
+      .then(() => this.mainSlide = this.allProjects[0]);
 
     ProjectAPI.getTags()
       .then(({tags}) => this.tags = tags);
