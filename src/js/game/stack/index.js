@@ -57,7 +57,7 @@ class Game {
     document.addEventListener('click', () => _this.onAction());
     document.addEventListener('touchstart', e => {
         e.preventDefault();
-        // this.onAction();
+        this.onAction();
     });
 
     document.querySelector('.highscore a').addEventListener('click', () => _this.saveHighscore());
