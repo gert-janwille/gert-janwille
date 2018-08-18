@@ -1,5 +1,5 @@
 const Schema = require(`mongoose`).Schema;
-
+const Scopes = require(`../const/Scopes`);
 
 const schema = new Schema({
 
@@ -46,6 +46,11 @@ const schema = new Schema({
   org: {
     type: String,
     default: "unkown"
+  },
+
+  scope: {
+    type: String,
+    default: Scopes.USER
   },
 
   isActive: {

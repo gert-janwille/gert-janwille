@@ -25,7 +25,7 @@ module.exports = [
     handler: (req, res) => {
 
       const invite = makeInviteCode();
-      const data = pick({invite, ...req.location, ip: req.info.remoteAddress}, [`invite`, `ip`, `hostname`, `city`, `region`, `country`, `loc`, `postal`, `org`])
+      const data = pick({invite, ...req.location, ip: req.info.remoteAddress, scope: 'user'}, [`invite`, `ip`, `hostname`, `city`, `region`, `country`, `loc`, `postal`, `org`])
 
       const inviteModel = new Invite(data);
 
@@ -78,7 +78,7 @@ module.exports = [
             {isActive}
           ]
         },
-        {$set: {isActive: false}},
+        {$set: {isActive: false, scope: 'hacker'}},
         {new: true}
       )
       .then(invite => {
