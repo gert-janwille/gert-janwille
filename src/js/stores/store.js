@@ -1,9 +1,16 @@
 import {observable, action} from 'mobx';
+import AuthAPI from '../lib/api/auth';
+import {setKey} from '../lib/token';
 
 class Store {
 
   @observable showMenu = false;
   @observable path = null;
+
+  constructor() {
+    AuthAPI.auth()
+      .then(({token}) => setKey('auth', JSON.stringify(token)));
+  }
 
   @action toggleMenu = e => {
     if (!this.showMenu) return this.showMenu = !this.showMenu;

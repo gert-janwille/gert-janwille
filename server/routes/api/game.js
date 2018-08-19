@@ -32,7 +32,7 @@ module.exports = [
 
       auth: {
         strategy: `token`,
-        scope: [Scopes.HACKER]
+        scope: [Scopes.AUTH]
       },
 
       validate: {

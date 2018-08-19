@@ -190,7 +190,7 @@ class Game {
     let username = document.querySelector('.highscore input').value;
     if (username.trim() === '') username = 'unknown';
 
-    GamesAPI.insert({type: 'stack', username, score}, {token: JSON.parse(token.get())})
+    GamesAPI.insert({type: 'stack', username, score}, {token: JSON.parse(token.getKey('auth'))})
       .then(newhighscore => this.highscore = this.setHighscore(newhighscore))
       .then(this.restartGame());
   }

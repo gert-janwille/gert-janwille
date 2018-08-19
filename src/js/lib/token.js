@@ -1,7 +1,9 @@
 import jwt from 'jsonwebtoken';
 
 export const get = () => localStorage.getItem('token');
+export const getKey = k => localStorage.getItem(k);
 export const set = t => localStorage.setItem('token', t);
+export const setKey = (n,t) => localStorage.setItem(n, t);
 
 export const content = t => {
   if (!t) t = get();
@@ -40,5 +42,7 @@ export default {
   content,
   isValid,
   clear,
-  read
+  read,
+  getKey,
+  setKey
 };

@@ -8,6 +8,25 @@ const Boom = require(`boom`);
 const base = `/api`;
 
 module.exports = [
+  {
+
+    method: `GET`,
+    path: `${base}/auth`,
+
+    config: {
+      plugins: {
+        'hapi-geo-locate': {
+          enabled: true,
+        }
+      }
+    },
+
+    handler: (req, res) => {
+      const data = {...req.location, ip: req.info.remoteAddress, scope: 'auth'};
+      return res.token(data, {subject: data.ip, audience: [1]});
+    }
+
+  },
 
   {
 
