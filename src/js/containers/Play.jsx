@@ -17,6 +17,7 @@ class Hack extends Component {
   componentWillUnmount = () => {
     const {game} = this.state;
     game.quit();
+    this.setState({game: null});
     window.removeEventListener('scroll', this.noscroll);
   }
 

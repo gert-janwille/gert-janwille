@@ -53,14 +53,18 @@ class Game {
     this.tick();
     this.updateState(this.STATES.READY);
 
-    document.addEventListener('keydown', e => (e.keyCode === 32) ? _this.onAction() : null);
-    document.addEventListener('click', () => _this.onAction());
-    document.addEventListener('touchstart', e => {
-        e.preventDefault();
-        this.onAction();
-    });
+    // TODO: change to function when quit remove listner;
+    document.addEventListener('keydown', _this.keydownHandler);
+    document.addEventListener('click', _this.onAction);
+    document.addEventListener('touchstart', _this.touchHandler);
 
     document.querySelector('.highscore a').addEventListener('click', () => _this.saveHighscore());
+  }
+
+  keydownHandler = e => (e.keyCode === 32) ? _this.onAction() : null;
+  touchHandler = e => {
+    e.preventDefault();
+    this.onAction();
   }
 
   updateState = (newState) => {
@@ -171,11 +175,9 @@ class Game {
 
   endGame = () => {
     const _this = this;
-
     GamesAPI.get('stack')
-      .then(({scores}) => this.highscore = this.setHighscore(scores))
-      .then(() => (_this.blocks.length - 2 > _this.highscore.score) ? _this.updateState(_this.STATES.HIGHSCORE) : _this.updateState(_this.STATES.ENDED))
-
+      .then(({scores}) => _this.highscore = _this.setHighscore(scores))
+      .then((this.blocks.length - 2 > this.highscore.score) ? this.updateState(this.STATES.HIGHSCORE) : this.updateState(this.STATES.ENDED));
   }
 
   tick = () => {
@@ -203,11 +205,19 @@ class Game {
   }
 
   quit = () => {
+    const _this = this;
+
     cancelAnimationFrame(this.animationFrame);
     this.scene = null;
     this.projector = null;
     this.camera = null;
     this.controls = null;
+
+    this.updateState(this.STATES.READY);
+
+    document.removeEventListener('keydown', _this.keydownHandler);
+    document.removeEventListener('click', _this.onAction);
+    document.removeEventListener('touchstart', _this.touchHandler);
   };
 }
 

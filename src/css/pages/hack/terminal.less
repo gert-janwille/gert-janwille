@@ -1,0 +1,71 @@
+
+.terminal-container {
+  width: 100vw;
+  height: 100vh;
+  background: red;
+}
+
+.overlay {
+  z-index: 1;
+  background: #0F3A50;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.terminal {
+  z-index: 2;
+  position: relative;
+  background: #0F3A50;
+  width: 100%;
+  height: 100%;
+  padding: 5rem;
+  overflow-y: scroll;
+
+  p, form, textarea {
+    font: 1.2rem "Monaco", Inconsolata, monospace;
+    color: #f8f8f8;
+  }
+
+  p, form {
+    margin-top: 1rem;
+  }
+
+  .me {
+    color: #7c7c7c;
+  }
+
+  .info {
+    color: #a1a1a1;
+  }
+
+  p:not(.info)::before, .dollar, .username {
+    content: '$';
+    color: #52a563;
+  }
+
+  .username, form .dollar {
+    margin-right: 1rem;
+  }
+
+  form {
+    display: flex;
+
+    textarea {
+      background: none;
+      border: none;
+      outline: none;
+      resize: none;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 555px) {
+  .terminal {
+    padding: .5rem;
+  }
+}
