@@ -42,7 +42,7 @@ module.exports = [
 
         payload: {
           type: Joi.string().min(3).required(),
-          username: Joi.string().min(3).required(),
+          username: Joi.string().min(1).required(),
           score: Joi.number().min(3).required()
         }
       }

@@ -169,7 +169,14 @@ class Game {
     if (this.blocks.length >= 5) this.instructions.classList.add('hide');
   };
 
-  endGame = () => (this.blocks.length - 2 > this.highscore.score) ? this.updateState(this.STATES.HIGHSCORE) : this.updateState(this.STATES.ENDED);
+  endGame = () => {
+    const _this = this;
+
+    GamesAPI.get('stack')
+      .then(({scores}) => this.highscore = this.setHighscore(scores))
+      .then(() => (_this.blocks.length - 2 > _this.highscore.score) ? _this.updateState(_this.STATES.HIGHSCORE) : _this.updateState(_this.STATES.ENDED))
+
+  }
 
   tick = () => {
     const _this = this;
