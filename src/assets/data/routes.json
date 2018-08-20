@@ -14,5 +14,9 @@
   {
     "name": "play",
     "path": "/play"
+  },
+  {
+    "name": "hack",
+    "path": "/hack"
   }
 ]
