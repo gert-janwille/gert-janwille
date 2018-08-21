@@ -31,14 +31,14 @@ class Detail extends Component {
 
     switch (arr[arr.length - 1]) {
       case 'mp4':
-        return(<video src={`/uploads/${createValidString(title)}/${preview}`} controls={false} loop autoPlay></video>);
+        return(<video src={`/uploads/${createValidString(title)}/${preview}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/preview.jpg'}  controls={false} loop autoPlay></video>);
 
       case 'png':
       case 'jpg':
-        return (<img src={`/uploads/${createValidString(title)}/${preview}`} alt="feature"/>);
+        return (<img src={`/uploads/${createValidString(title)}/${preview}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/preview.jpg'}  alt="feature"/>);
 
       default:
-        return (<img src={`/uploads/${createValidString(title)}/${preview}`} alt="feature"/>);
+        return (<img src={`/uploads/${createValidString(title)}/${preview}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/preview.jpg'}  alt="feature"/>);
     }
   }
 
@@ -83,8 +83,8 @@ class Detail extends Component {
           </div>
 
           <div className="image">
-            <img src={`/uploads/${createValidString(title)}/${bigImage}`} alt="work1" />
-            <img src={`/uploads/${createValidString(title)}/${smallImage}`} alt="work2" />
+            <img src={`/uploads/${createValidString(title)}/${bigImage}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/big-image.jpg'} alt="work1" />
+            <img src={`/uploads/${createValidString(title)}/${smallImage}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/small-image.jpg'} alt="work2" />
           </div>
 
         </article>

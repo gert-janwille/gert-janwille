@@ -9,7 +9,7 @@ const ProjectItem = ({id, title, services, mainImage}) => {
 
       <div className="image-holder">
 
-        <img src={`/uploads/${createValidString(title)}/${mainImage}`} width="100%" alt={title}/>
+        <img src={`/uploads/${createValidString(title)}/${mainImage}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/main-image.png'}  width="100%" alt={title}/>
         {/* <p className="views"><span className="eye small-icon"></span>100</p> */}
 
       </div>

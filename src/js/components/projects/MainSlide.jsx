@@ -12,7 +12,7 @@ const MainSlide = ({title, subtitle, mainImage, color}) => {
   return(
     <section className='intro' style={{background: `linear-gradient(${color[0]}, ${color[1]})`}}>
       <div className="image">
-        <img src={`/uploads/${createValidString(title)}/${mainImage}`} width="100%" preserveAspectRatio="xMidYMid slice" alt={title}/>
+        <img src={`/uploads/${createValidString(title)}/${mainImage}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/main-image.png'} width="100%" preserveAspectRatio="xMidYMid slice" alt={title}/>
         {/* splitImage('/uploads/test-header.png', 15, 'main-img') */}
       </div>
 
