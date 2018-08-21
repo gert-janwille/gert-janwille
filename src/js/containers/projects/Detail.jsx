@@ -103,7 +103,7 @@ class Detail extends Component {
         </article>
 
         <article className="hire-me block">
-          <p className="thanks pf-400">Want something like this?</p>
+          <h4 className="thanks pf-400">Want something like this?</h4>
           <p>Let's just collaborate together and we will create a wonderfull piece of happiness and magic.</p>
           <Link className='button' to={`/contact`}>
             Contact me
