@@ -34,7 +34,7 @@ const Hack = ({socket, msgs, me, sendMsg}) => {
            * Wanna change your username? just type: <b>SET username=USERNAME</b><br/>
            * <br/>
            * @version 1.0 <br/>
-           * @author  Gert-Jan Wille, talk@gert-janwille.com <br/>
+         * @author  Gert-Jan Wille, hello@gert-janwille.com <br/>
            * <br/>
           ***
         </p>
