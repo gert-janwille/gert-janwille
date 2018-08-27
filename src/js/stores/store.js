@@ -8,6 +8,8 @@ class Store {
   @observable path = null;
 
   constructor() {
+    document.querySelector('body').removeChild(document.querySelector('.loading'));
+
     AuthAPI.auth()
       .then(({token}) => setKey('auth', JSON.stringify(token)));
   }

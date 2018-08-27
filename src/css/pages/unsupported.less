@@ -1,0 +1,62 @@
+.unsupported {
+  top: 0;
+  position: absolute;
+  background: #253E52;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.unsupported-container {
+  background: white;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: @mainColor;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  & > p {
+    font-size: 1.2rem;
+    width: 60%;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+}
+
+.browser-support {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+}
+
+.browser p {
+  text-align: center;
+  margin-top: .5rem;
+}
+
+.gotit {
+  margin-top: 5rem;
+  padding: 1.5rem 4rem;
+  background: #2FA1D2;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.inactive {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
