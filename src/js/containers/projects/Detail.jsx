@@ -31,7 +31,7 @@ class Detail extends Component {
 
     switch (arr[arr.length - 1]) {
       case 'mp4':
-        return(<video src={`/uploads/${createValidString(title)}/${preview}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/preview.jpg'}  controls={false} loop autoPlay></video>);
+        return(<video src={`/uploads/${createValidString(title)}/${preview}`} onError={({currentTarget}) => currentTarget.src = '/assets/img/default/preview.jpg'}  controls={true} loop></video>);
 
       case 'png':
       case 'jpg':

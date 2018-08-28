@@ -61,7 +61,6 @@ module.exports = [
 
     handler: (req, res) => {
       const data = req.payload;
-      console.log(data);
 
       data.subject = `${data.client}, filled in the questionary❕`;
       data.mailtype = `questionary`;

@@ -61,7 +61,7 @@ class Game {
     document.querySelector('.highscore a').addEventListener('click', () => _this.saveHighscore());
   }
 
-  keydownHandler = e => (e.keyCode === 32) ? _this.onAction() : null;
+  keydownHandler = e => (e.keyCode === 32) ? this.onAction() : null;
   touchHandler = e => {
     e.preventDefault();
     this.onAction();
