@@ -61,6 +61,19 @@ export const getRandom = (a, n) => {
   return tmp;
 }
 
+export const QueryStringToJSON = (h) => {
+    const pairs = h.slice(1).split('&');
+
+    const result = {};
+    pairs.forEach(pair => {
+        pair = pair.split('=');
+        result[pair[0]] = decodeURIComponent(pair[1] || '');
+    });
+
+    return JSON.parse(JSON.stringify(result));
+}
+
+
 export default {
   isEven,
   isPathName,
@@ -70,5 +83,6 @@ export default {
   getbytype,
   createValidString,
   getrandomInt,
-  getRandom
+  getRandom,
+  QueryStringToJSON
 }

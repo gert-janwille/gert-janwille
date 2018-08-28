@@ -7,6 +7,7 @@ import Invite from './hack/Invite';
 import Hack from './hack/Hack';
 import Play from './Play';
 import PrivacyPolicy from './PrivacyPolicy';
+import Questionary from './Questionary';
 
 export {
   App,
@@ -17,5 +18,6 @@ export {
   Hack,
   About,
   PrivacyPolicy,
-  Play
+  Play,
+  Questionary
 };

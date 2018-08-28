@@ -1,5 +1,6 @@
 import {observable, action} from 'mobx';
 import AuthAPI from '../lib/api/auth';
+import QuestionaryAPI from '../lib/api/questionary';
 import {setKey} from '../lib/token';
 
 class Store {
@@ -25,6 +26,11 @@ class Store {
     const {pathname} = path;
     if (this.path !== pathname) window.scrollTo(0, 0);
     this.path = pathname;
+  }
+
+  @action submitQuestionary = (data, history) => {
+    QuestionaryAPI.mail(data)
+      .then(i => i ? history.push('/') : null)
   }
 
 }

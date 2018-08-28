@@ -1,0 +1,373 @@
+{
+  "en": [
+    {
+      "question": "What does your business actually do?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "business"
+    },
+
+    {
+      "question": "What do you want your site to accomplish?",
+      "subtitle" : "What's your primary goal for the site? What do you want most from it? Quote requests, sales, class booking, more memberships etc?",
+      "type": "textarea",
+      "name": "primary-goal"
+    },
+
+    {
+      "question": "What are your secondary goals for your site?",
+      "subtitle" : "what are your secondary goals for your site? Newsletter opt-in to build your list, eBook download, Facebook like etc?",
+      "type": "textarea",
+      "name": "secondary-goal"
+    },
+
+    {
+      "question": "Do you have a website already?",
+      "subtitle" : "",
+      "type": "yes/no",
+      "name": "web-already",
+
+      "isTrue": [
+        {
+          "question": "When did you get this site?",
+          "subtitle" : "",
+          "type": "text",
+          "name": "when-site"
+        },
+
+        {
+          "question": "Do you find it easy to use and edit?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "easy-edit"
+        },
+
+        {
+          "question": "What CMS (Content Management System) does it use (if any)?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "cms"
+        },
+
+        {
+          "question": "What do you like about it?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name":"like-it"
+        },
+
+        {
+          "question": "What DON'T you like about it?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "dont-like"
+        },
+
+        {
+          "question": "How many inbound leads are you currently getting from it?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "inbound"
+        },
+
+        {
+          "question": "Is it giving you the results you want to see?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "results"
+        },
+
+        {
+          "question": "What would you like to see carry over to the new site?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "carry-over"
+        },
+
+        {
+          "question": "Have you got Google Analytics setup? If so, can you generate a report for us so we can see what's working and what's not?",
+          "subtitle" : "Please mail this report to hello@gert-janwille.com",
+          "type": "none",
+          "name": "analytics"
+        }
+      ]
+    },
+
+    {
+      "question": "What makes your company remarkable?",
+      "subtitle" : "ex. Being the cheapest, Having awesome customer service, An amazing guarantee or returns policy. Tip: Think Zappos and their 12-month shoe return policy, ...",
+      "type": "textarea",
+      "name": "remarkable"
+    },
+
+    {
+      "question": "Who are your competitors?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "competitors"
+    },
+
+    {
+      "question": "What websites do you like and why?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "like-websites"
+    },
+
+    {
+      "question": "If you could roll all your customers into one super-customer... what would he/she be like?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "customer"
+    },
+
+    {
+      "question": "What features do you want your website to have?",
+      "subtitle" : "ex. A shopping cart, Photo galleries, A blog or news feed, ...",
+      "type": "textarea",
+      "name": "features"
+    },
+
+    {
+      "question": "What does success look like to you?",
+      "subtitle" : "ex. Amount of traffic, Number of sales, Number of social media (Facebook / Twitter) followers, ...",
+      "type": "textarea",
+      "name": "success"
+    },
+
+    {
+      "question": "Do you have a style guide or any existing collateral?",
+      "subtitle" : "If so please mail this guide and/or collateral to hello@gert-janwille.com",
+      "type": "none",
+      "name": "brand"
+    },
+
+    {
+      "question": "Wilt u een template of een op maat gemaakte site?",
+      "subtitle" : "",
+      "type": "text",
+      "name": "template-maat"
+    },
+
+    {
+      "question": "Who supplies the texts?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "texten"
+    },
+
+    {
+      "question": "How many languages do you want on your website",
+      "subtitle" : "",
+      "type": "text",
+      "name": "talen"
+    },
+
+    {
+      "question": "Do you want to adjust the content yourself on your website?",
+      "subtitle" : "",
+      "type": "text",
+      "name": "cms-impli"
+    },
+
+    {
+      "question": "What is your budget?",
+      "subtitle" : "We will offer you a correct price no matter what your budget might be.",
+      "type": "text",
+      "name": "budget"
+    },
+
+    {
+      "question": "So when do you want to get started? Do you have a launch date in mind?",
+      "subtitle" : "",
+      "type": "text",
+      "name": "start"
+    }
+  ],
+
+  "nl": [
+    {
+      "question": "Wat doet uw bedrijf eigenlijk?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "business"
+    },
+
+    {
+      "question": "Wat wilt u dat uw site bereikt?",
+      "subtitle" : "Wat is je primaire doel voor de site? Wat wil je er het meest van hebben? Offerte verzoeken, verkoop, klasse boeking, meer lidmaatschappen enz.?",
+      "type": "textarea",
+      "name": "primary-goal"
+    },
+
+    {
+      "question": "Wat zijn uw secundaire doelen voor uw site?",
+      "subtitle" : "wat zijn je secundaire doelen voor je site? Nieuwsbrief inschrijvingen, eBook download, Facebook likes?",
+      "type": "textarea",
+      "name": "secondary-goal"
+    },
+
+    {
+      "question": "Heeft u al een website?",
+      "subtitle" : "",
+      "type": "yes/no",
+      "name": "web-already",
+
+      "isTrue": [
+        {
+          "question": "Wanneer kreeg je deze site?",
+          "subtitle" : "",
+          "type": "text",
+          "name": "when-site"
+        },
+
+        {
+          "question": "Vindt u het gemakkelijk te gebruiken en te bewerken?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "easy-edit"
+        },
+
+        {
+          "question": "Welk CMS (Content Management System) gebruikt het (indien aanwezig)?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "cms"
+        },
+
+        {
+          "question": "Wat vind je er leuk aan?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name":"like-it"
+        },
+
+        {
+          "question": "Wat vind je er NIET leuk aan?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "dont-like"
+        },
+
+        {
+          "question": "Hoeveel binnenkomende leads haalt u er momenteel uit?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "inbound"
+        },
+
+        {
+          "question": "Geeft het je de resultaten die je wilt zien?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "results"
+        },
+
+        {
+          "question": "Wat zou je willen zien overdragen aan de nieuwe site?",
+          "subtitle" : "",
+          "type": "textarea",
+          "name": "carry-over"
+        },
+
+        {
+          "question": "Heb je Google Analytics ingesteld? Zo ja, kunt u een rapport voor ons genereren zodat we kunnen zien wat werkt en wat niet?",
+          "subtitle" : "Please mail dit rapport naar hello@gert-janwille.com",
+          "type": "none",
+          "name": "analytics"
+        }
+      ]
+    },
+
+    {
+      "question": "Wat maakt jouw bedrijf opmerkelijk?",
+      "subtitle" : "ex. De goedkoopste zijn, geweldige klantenservice hebben, een fantastisch garantie- of retourbeleid. Tip: denk aan Zappos en hun beleid voor schoenenterugkeer van 12 maanden,...",
+      "type": "textarea",
+      "name": "remarkable"
+    },
+
+    {
+      "question": "Wie zijn jouw concurrenten?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "competitors"
+    },
+
+    {
+      "question": "Welke websites vind je leuk en waarom?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "like-websites"
+    },
+
+    {
+      "question": "Als je al je klanten in één superklant zou kunnen veranderen... hoe zou hij / zij dan zijn?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "customer"
+    },
+
+    {
+      "question": "Welke functies wilt u dat uw website heeft?",
+      "subtitle" : "ex. Een winkelwagentje, fotogalerijen, een blog of nieuwsfeed,...",
+      "type": "textarea",
+      "name": "features"
+    },
+
+    {
+      "question": "Hoe ziet succes eruit voor jou?",
+      "subtitle" : "ex. Aantal verkeer, aantal verkopen, aantal volgers van sociale media (Facebook / Twitter),...",
+      "type": "textarea",
+      "name": "success"
+    },
+
+    {
+      "question": "Heb je een stijlgids of een bestaand bestanden(logo's, banners, ...)?",
+      "subtitle" : "Stuur dan deze gids en/of onderpand naar hello@gert-janwille.com",
+      "type": "none",
+      "name": "brand"
+    },
+
+    {
+      "question": "Wilt u een template of een op maat gemaakte site?",
+      "subtitle" : "",
+      "type": "text",
+      "name": "template-maat"
+    },
+
+    {
+      "question": "Wie levert de teksten aan?",
+      "subtitle" : "",
+      "type": "textarea",
+      "name": "texten"
+    },
+
+    {
+      "question": "Hoeveel talen wilt u op uw website",
+      "subtitle" : "",
+      "type": "text",
+      "name": "talen"
+    },
+
+    {
+      "question": "Wilt u zelf de content aanpassen op uw website?",
+      "subtitle" : "",
+      "type": "text",
+      "name": "cms-impli"
+    },
+
+    {
+      "question": "Wat is uw budget?",
+      "subtitle" : "We bieden u een correcte prijs, ongeacht uw budget.",
+      "type": "text",
+      "name": "budget"
+    },
+
+    {
+      "question": "Dus wanneer wil je aan de slag gaan? Heb je een startdatum in gedachten?",
+      "subtitle" : "",
+      "type": "text",
+      "name": "start"
+    }
+  ]
+}

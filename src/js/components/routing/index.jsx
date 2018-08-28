@@ -1,5 +1,7 @@
 import PrivateRoute from './PrivateRoute';
+import RefRoute from './RefRoute';
 
 export {
-  PrivateRoute
+  PrivateRoute,
+  RefRoute
 };

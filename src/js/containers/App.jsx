@@ -5,13 +5,13 @@ import {Route} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 // import DevTools from 'mobx-react-devtools';
 
-import {PrivateRoute} from '../components/routing/';
-import {Projects, Detail, Contact, Invite, Hack, About, PrivacyPolicy, Play} from './';
+import {PrivateRoute, RefRoute} from '../components/routing/';
+import {Projects, Detail, Contact, Invite, Hack, About, PrivacyPolicy, Play, Questionary} from './';
 import {Navigation, Menu, Footer} from '../components/'
 
-const App = ({toggleMenu, showMenu, scrollIfNeeded}) => {
+const App = ({toggleMenu, showMenu, scrollIfNeeded, history}) => {
   scrollIfNeeded(window.location);
-  
+
   return (
 
     <section>
@@ -30,6 +30,7 @@ const App = ({toggleMenu, showMenu, scrollIfNeeded}) => {
         <Route path='/privacy-policy' component={PrivacyPolicy} />
 
         <PrivateRoute exact path='/hack' component={Hack} redirect={Invite} />
+        <RefRoute exact path='/questionary' component={Questionary} redirect={Projects} {...history }/>
       </section>
 
       <Footer />
