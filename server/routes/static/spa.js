@@ -5,6 +5,13 @@ module.exports = [
     method: `GET`,
     path: `/{param*}`,
 
+    config:{
+      cache:{
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+      }
+    },
+
     handler: {
       file: `index.html`
     }
@@ -15,6 +22,12 @@ module.exports = [
 
     method: `GET`,
     path: `/manifest.json`,
+    config:{
+      cache:{
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+      }
+    },
 
     handler: {
       file: `manifest.json`
@@ -26,6 +39,12 @@ module.exports = [
 
     method: `GET`,
     path: `/js/{param*}`,
+    config:{
+      cache:{
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+      }
+    },
 
     handler: {
       directory: {
@@ -39,6 +58,12 @@ module.exports = [
 
     method: `GET`,
     path: `/css/{param*}`,
+    config:{
+      cache:{
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+      }
+    },
 
     handler: {
       directory: {
@@ -52,6 +77,12 @@ module.exports = [
 
     method: `GET`,
     path: `/assets/{param*}`,
+    config:{
+      cache:{
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+      }
+    },
 
     handler: {
       directory: {
@@ -65,6 +96,12 @@ module.exports = [
 
     method: `GET`,
     path: `/uploads/{param*}`,
+    config:{
+      cache:{
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+      }
+    },
 
     handler: {
       directory: {
@@ -78,6 +115,12 @@ module.exports = [
 
     method: `GET`,
     path: `/social/{param*}`,
+    config:{
+      cache:{
+        expiresIn: 30 * 1000,
+        privacy: 'private'
+      }
+    },
 
     handler: {
       directory: {
