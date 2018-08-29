@@ -18,6 +18,7 @@ const publicPath = `/`;
 
 const copy = new CopyWebpackPlugin([
   './src/manifest.json',
+  './src/.htaccess',
   {
   from: `./src/assets`,
   to: `assets`
