@@ -19,31 +19,31 @@ module.exports.register = (server, options, next) => {
 
     users.push(user);
 
-    socket.emit(`init`, {users, msgs, user});
-    socket.broadcast.emit(`join`, user);
+    socket.compress(true).emit(`init`, {users, msgs, user});
+    socket.broadcast.compress(true).emit(`join`, user);
 
     socket.on(`disconnect`, () => {
       users = users.filter(u => u.socketId !== socketId);
-      socket.broadcast.emit(`leave`, {socketId, user});
+      socket.broadcast.compress(true).emit(`leave`, {socketId, user});
     });
 
 
     socket.on(`setUsername`, username => {
       user.old_username = user.username;
       user.username = username;
-      socket.broadcast.emit(`setUsername`, {username, socketId, old_username: user.old_username});
+      socket.broadcast.compress(true).emit(`setUsername`, {username, socketId, old_username: user.old_username});
     });
 
 
     socket.on(`msg`, msg => {
       msgs.push({msg, socketId, user});
-      socket.broadcast.emit(`msg`, {msg, socketId, user});
+      socket.broadcast.compress(true).emit(`msg`, {msg, socketId, user});
     });
 
 
 
     socket.on(`pm`, to => {
-      io.to(to).emit(`pm`, socketId);
+      io.to(to).compress(true).emit(`pm`, socketId);
     });
 
   });
