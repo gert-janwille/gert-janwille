@@ -7,7 +7,7 @@ module.exports = [
 
     config:{
       cache:{
-        expiresIn: 30 * 1000,
+        expiresIn: 31536000,
         privacy: 'private'
       }
     },
@@ -24,7 +24,7 @@ module.exports = [
     path: `/manifest.json`,
     config:{
       cache:{
-        expiresIn: 30 * 1000,
+        expiresIn: 31536000,
         privacy: 'private'
       }
     },
@@ -41,7 +41,7 @@ module.exports = [
     path: `/js/{param*}`,
     config:{
       cache:{
-        expiresIn: 30 * 1000,
+        expiresIn: 31536000,
         privacy: 'private'
       }
     },
@@ -60,7 +60,7 @@ module.exports = [
     path: `/css/{param*}`,
     config:{
       cache:{
-        expiresIn: 30 * 1000,
+        expiresIn: 31536000,
         privacy: 'private'
       }
     },
@@ -79,7 +79,7 @@ module.exports = [
     path: `/assets/{param*}`,
     config:{
       cache:{
-        expiresIn: 30 * 1000,
+        expiresIn: 31536000,
         privacy: 'private'
       }
     },
@@ -98,7 +98,7 @@ module.exports = [
     path: `/uploads/{param*}`,
     config:{
       cache:{
-        expiresIn: 30 * 1000,
+        expiresIn: 31536000,
         privacy: 'private'
       }
     },
@@ -117,7 +117,7 @@ module.exports = [
     path: `/social/{param*}`,
     config:{
       cache:{
-        expiresIn: 30 * 1000,
+        expiresIn: 31536000,
         privacy: 'private'
       }
     },
