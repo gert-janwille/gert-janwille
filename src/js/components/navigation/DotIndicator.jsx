@@ -20,6 +20,26 @@ class DotIndicator extends Component {
     const {breakpoints} = this.state;
     let position = window.pageYOffset;
 
+    const {top} = document.querySelector('.main-info-block').getBoundingClientRect();
+
+    const changeBoxes = [document.querySelector('.scroll-indicator')];
+    document.querySelectorAll('.dot-indicator').forEach(e => changeBoxes.push(e));
+
+    changeBoxes.forEach(el => {
+      const {bottom, height} = el.getBoundingClientRect();
+
+      if (bottom - (height / 2) >= top) {
+        el.classList.remove('light-indicator');
+        el.classList.add('dark-indicator');
+      } else {
+        el.classList.remove('dark-indicator');
+        el.classList.add('light-indicator');
+      }
+
+      return 0;
+    });
+
+
     for (var i = 0; i < breakpoints.length; i++) {
       if (position <= breakpoints[i]) {
         this.setState({index: i});
