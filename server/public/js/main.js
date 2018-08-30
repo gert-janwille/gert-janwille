@@ -108638,47 +108638,17 @@ var Navigation = function Navigation(_ref) {
       )
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'nav-search', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        }
-      },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'nav-search-input', name: 'nav-search', id: 'nav-search', __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        }
-      }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'label',
-        { htmlFor: 'nav-search', className: 'nav-search-label', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 15
-          }
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'span',
-          { className: 'hidden', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 15
-            }
-          },
-          'Search'
-        )
-      )
-    ),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'a',
       { className: 'menu-icon', onClick: handleShowMenu, __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 20
         }
       },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'span',
         { className: 'hidden', __source: {
             fileName: _jsxFileName,
-            lineNumber: 18
+            lineNumber: 20
           }
         },
         'Menu'
