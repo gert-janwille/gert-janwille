@@ -27,7 +27,7 @@ class Store {
       this.me.old_username = this.me.username;
       this.me.username = n;
 
-      this.socket.emit(`setUsername`, n);
+      this.socket.compress(true).emit(`setUsername`, n);
       set('username', n);
 
       return 0;
@@ -35,7 +35,7 @@ class Store {
 
     const {id: socketId} = this.socket;
     this.msgs.push({msg, socketId, user: this.me});
-    this.socket.emit(`msg`, msg);
+    this.socket.compress(true).emit(`msg`, msg);
   }
 
 
@@ -56,7 +56,7 @@ class Store {
 
     if (get('username')) {
       const storeName = get('username');
-      this.socket.emit(`setUsername`, storeName);
+      this.socket.compress(true).emit(`setUsername`, storeName);
       this.me.old_username = this.me.username;
       this.me.username = storeName;
     }

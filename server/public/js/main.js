@@ -112795,7 +112795,7 @@ var Store = (_class = function Store() {
         _this.me.old_username = _this.me.username;
         _this.me.username = n;
 
-        _this.socket.emit('setUsername', n);
+        _this.socket.compress(true).emit('setUsername', n);
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__lib_localStorage__["b" /* set */])('username', n);
 
         return 0;
@@ -112804,7 +112804,7 @@ var Store = (_class = function Store() {
       var socketId = _this.socket.id;
 
       _this.msgs.push({ msg: msg, socketId: socketId, user: _this.me });
-      _this.socket.emit('msg', msg);
+      _this.socket.compress(true).emit('msg', msg);
     };
   }
 }), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, 'handleWSInit', [__WEBPACK_IMPORTED_MODULE_0_mobx__["j" /* action */]], {
@@ -112833,7 +112833,7 @@ var Store = (_class = function Store() {
 
       if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__lib_localStorage__["c" /* get */])('username')) {
         var storeName = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__lib_localStorage__["c" /* get */])('username');
-        _this2.socket.emit('setUsername', storeName);
+        _this2.socket.compress(true).emit('setUsername', storeName);
         _this2.me.old_username = _this2.me.username;
         _this2.me.username = storeName;
       }
