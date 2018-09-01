@@ -18,6 +18,10 @@ module.exports = [
 
     config: {
 
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      },
 
       auth: {
         strategy: `token`,

@@ -52,7 +52,7 @@ class Detail extends Component {
   }
 
   render() {
-    const {detailProject} = this.props;
+    const {detailProject, history} = this.props;
 
     if (isEmpty(detailProject)) return(<p>fetching</p>);
     this.detailProject = detailProject;
@@ -61,7 +61,7 @@ class Detail extends Component {
 
     return(
       <section className='home-container detail-container'>
-        <DotIndicator />
+        <DotIndicator history={history}/>
         <MainSlide {...detailProject} />
 
         <article className="main-info-block block">

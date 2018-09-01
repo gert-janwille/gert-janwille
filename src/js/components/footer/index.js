@@ -18,7 +18,7 @@ const Footer = () => (
     <div className="social">
       <a className="social-icon github" href="https://github.com/gert-janwille" rel='noopener noreferrer' target='_blank'><span className="hidden">Github</span></a>
       <a className="social-icon behance" href="https://www.behance.net/gert-janwille" rel='noopener noreferrer' target='_blank'><span className="hidden">Behance</span></a>
-      <a className="social-icon instagram" href="https://www.instagram.com/gertjanwille/" rel='noopener noreferrer' target='_blank'><span className="hidden">Instagram</span></a>
+      <a className="social-icon instagram" href="https://www.instagram.com/gwille.agency/" rel='noopener noreferrer' target='_blank'><span className="hidden">Instagram</span></a>
       <a className="social-icon linkedin" href="https://be.linkedin.com/in/gert-janwille" rel='noopener noreferrer' target='_blank'><span className="hidden">Linkedin</span></a>
     </div>
 

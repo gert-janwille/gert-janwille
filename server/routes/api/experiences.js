@@ -14,6 +14,12 @@ module.exports = [
 
     method: `GET`,
     path: `${base}/experiences/{type?}`,
+    config : {
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      }
+    },
 
     handler: (req, res) => {
       const {type} = req.params;
@@ -29,6 +35,11 @@ module.exports = [
     path: `${base}/experiences`,
 
     config: {
+
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      },
 
       auth: {
         strategy: `token`,

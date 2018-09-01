@@ -16,6 +16,12 @@ module.exports = [
 
     method: `GET`,
     path: `${base}/projects`,
+    config: {
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      }
+    },
 
     handler: (req, res) => {
       Project.find()
@@ -28,6 +34,12 @@ module.exports = [
 
     method: `GET`,
     path: `${base}/tags`,
+    config: {
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      }
+    },
 
     handler: (req, res) => {
       Project.find().distinct('services')
@@ -42,6 +54,11 @@ module.exports = [
     path: `${base}/projects`,
 
     config: {
+
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      },
 
       auth: {
         strategy: `token`,

@@ -12,9 +12,15 @@ class DotIndicator extends Component {
   componentDidMount = () => {
     this.renderDots()
     window.addEventListener('scroll', this.handleScrollEvent);
+    window.addEventListener('wheel', this.handleGoBack);
   };
 
-  componentWillUnmount = () => window.removeEventListener('scroll', this.handleScrollEvent);
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScrollEvent);
+    window.removeEventListener('wheel', this.handleGoBack);
+  }
+
+  handleGoBack = ({offsetY}) => (offsetY <= 200 && offsetY >= 180 && window.pageYOffset === 0) ? this.props.history.goBack() : null;
 
   handleScrollEvent = e => {
     const {breakpoints} = this.state;

@@ -14,6 +14,12 @@ module.exports = [
 
     method: `GET`,
     path: `${base}/skills/{type?}`,
+    config: {
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      }
+    },
 
     handler: (req, res) => {
       const {type} = req.params;

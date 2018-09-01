@@ -14,6 +14,11 @@ module.exports = [
     path: `${base}/auth`,
 
     config: {
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      },
+
       plugins: {
         'hapi-geo-locate': {
           enabled: true,
@@ -34,6 +39,10 @@ module.exports = [
     path: `${base}/auth`,
 
     config: {
+      cache:{
+        expiresIn: 31536000 * 10000,
+        privacy: 'private'
+      },
 
       validate: {
 
